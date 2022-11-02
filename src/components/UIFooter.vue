@@ -124,11 +124,12 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <button type="submit" class="btn acol-12 sm:acol-4">Send</button>
-
-      <div class="acol-12 sm:acol-8">
+      <div class="acol-12">
         <div data-netlify-recaptcha="true"></div>
       </div>
+
+      <button type="submit" class="btn acol-12 sm:acol-4">Send</button>
+
     </form>
   </section>
 </template>
