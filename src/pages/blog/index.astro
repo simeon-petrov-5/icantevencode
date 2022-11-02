@@ -13,7 +13,7 @@ for (let article of articles) {
 }
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Blog">
   <section class="section section--sm">
     <h1 class="title-1">Sometimes I try to write stuff</h1>
 
@@ -22,7 +22,7 @@ for (let article of articles) {
         articleInfo.map((article) => (
           <li>
             <article class="post">
-              <a class="clean" href={`blog/${article.slug}`}>
+              <a class="clean" href={`/blog/${article.slug}`}>
                 <div class="blogpost-thumbnail">
                   <img
                     class="blogpost-thumbnail__img"
@@ -31,7 +31,7 @@ for (let article of articles) {
                   />
                 </div>
               </a>
-              <a href={`blog/${article.slug}`}>
+              <a href={`/blog/${article.slug}`}>
                 <h3>{article.title}</h3>
               </a>
               <p>{article.excerpt} ...</p>
