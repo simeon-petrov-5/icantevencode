@@ -1,0 +1,24 @@
+---
+import Blogpostlayout from "src/layouts/blogpost.astro";
+import BlogHeader from "@components/BlogHeader.astro";
+
+export async function getStaticPaths() {
+  const articles = await Astro.glob("../../articles/*.md");
+
+  return articles.map((article) => ({
+    params: {
+      slug: article.frontmatter.slug,
+    },
+    props: {
+      article,
+    },
+  }));
+}
+
+const { Content, frontmatter } = Astro.props.article;
+---
+
+<Blogpostlayout title="blogpost">
+  <BlogHeader frontmatter={frontmatter}/>
+  <Content />
+</Blogpostlayout>

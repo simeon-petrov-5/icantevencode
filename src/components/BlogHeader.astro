@@ -1,0 +1,48 @@
+---
+import getUnsplashData from "src/utils/unsplash";
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    subtitle: string;
+    unsplashId: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+const imgData = await getUnsplashData(frontmatter);
+---
+
+<h1>
+  {frontmatter.title}
+</h1>
+
+<p class="sub-title">
+  {frontmatter.subtitle}
+</p>
+
+<div class="blogpost-thumbnail">
+  <img
+    class="blogpost-thumbnail__img"
+    src={imgData.url}
+    alt={imgData.alt_desc}
+  />
+</div>
+<a
+  class="img-url"
+  href={`https://unsplash.com/photos/${frontmatter.unsplashId}`}
+  title="Image on usplash"
+  target="_blank"
+>
+  Image on Usplash - {imgData.desc} by {imgData.username}
+</a>
+
+<style>
+  .img-url {
+    font-style: italic;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 1.5rem;
+  }
+</style>

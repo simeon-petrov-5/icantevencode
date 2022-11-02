@@ -1,0 +1,158 @@
+---
+const colors = [
+  "#ffa8a8",
+  "#ff8787",
+  "#ff6b6b",
+  "#fa5252",
+  "#e599f7",
+  "#da77f2",
+  "#cc5de8",
+  "#b197fc",
+  "#9775fa",
+  "#845ef7",
+  "#4dabf7",
+  "#339af0",
+  "#228be6",
+  "#66d9e8",
+  "#3bc9db",
+  "#15aabf",
+  "#63e6be",
+  "#38d9a9",
+  "#12b886",
+  "#8ce99a",
+  "#69db7c",
+  "#40c057",
+  "#a9e34b",
+  "#94d82d",
+  "#82c91e",
+  "#ffe066",
+  "#fcc419",
+  "#fab005",
+  "#ffc078",
+  "#ffa94d",
+  "#ff922b",
+  "#fd7e14",
+];
+const mainStack = [
+  "Vue",
+  "Vite",
+  "Vitest",
+  "Jest",
+  "Pinia",
+  "Vuex",
+  "Nuxt",
+  "SSR",
+  "SSG",
+  "JS",
+  "TS",
+  "Dart SASS",
+  "WindiCSS",
+  "Tailwind",
+  "CSS Vars",
+  "Strapi",
+  "JAM Stack",
+];
+const generalStack = ["React", "Gatsby", "NetlifyCMS", "WordPress", "jQuery"];
+
+const randomColor = () => {
+  const color = colors[Math.floor(Math.random() * colors.length)];
+
+  return `color: ${color}`;
+};
+---
+
+<section id="section-stack" class="section section--sm techstack">
+  <div style="overflow: hidden">
+    <h2 class="title-1" data-aos="fade-up">words i know / use / guess</h2>
+    <span class="subTitle" data-aos="fade-left" data-aos-delay="500">
+      You get the drill
+    </span>
+  </div>
+
+  <ul class="stack-list" data-aos="fade-up">
+    <li class="stack--main">My main stack are stuff like</li>
+
+    {mainStack.map((main) => <li style={randomColor()}>{main}</li>)}
+
+    <li class="stack--general">But I also know some stuff about</li>
+
+    {generalStack.map((general) => <li style={randomColor()}>{general}</li>)}
+  </ul>
+</section>
+
+<style lang="scss">
+  @keyframes stack-fade-right {
+    from {
+      left: -10px;
+      opacity: 0;
+    }
+    to {
+      left: 0px;
+      opacity: 1;
+    }
+  }
+  .techstack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div .subTitle {
+      margin-left: auto;
+      display: block;
+      font-size: var(--font-size-fluid-0);
+      text-align: left;
+      color: var(--clr-primary-3);
+      margin-bottom: 3rem;
+      font-style: italic;
+      margin-right: 0.75rem;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2rem;
+      row-gap: 0.5rem;
+      font-size: 1.25rem;
+      .stack--main {
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(
+          to right,
+          var(--lime-6),
+          var(--orange-4)
+        );
+      }
+
+      .stack--general {
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(
+          to right,
+          var(--orange-4),
+          var(--lime-6)
+        );
+      }
+
+      & > li {
+        position: relative;
+        left: -10px;
+        opacity: 0;
+      }
+      @for $i from 2 to 30 {
+        & > li:nth-child(#{$i}) {
+          animation-delay: (#{$i * 200ms});
+        }
+      }
+      // Small workaround to use custom animation after the aos has ended
+      &:where(.aos-animate) > li {
+        animation: stack-fade-right 500ms forwards ease-in;
+      }
+    }
+  }
+
+  @media screen and (min-width: 852px) {
+    .techstack div .subTitle {
+      text-align: right;
+    }
+  }
+</style>

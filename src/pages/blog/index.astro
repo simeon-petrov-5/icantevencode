@@ -1,0 +1,66 @@
+---
+import getUnsplashData from "src/utils/unsplash";
+import Layout from "../../layouts/layout.astro";
+const articles = await Astro.glob("../../articles/*.md");
+
+const articleInfo = [];
+
+for (let article of articles) {
+  const frontmatter = { ...article.frontmatter };
+  const imgData = await getUnsplashData(frontmatter as any);
+  frontmatter.imgData = imgData;
+  articleInfo.push(frontmatter);
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <section class="section section--sm">
+    <h1 class="title-1">Sometimes I try to write stuff</h1>
+
+    <ul class="agrid-2 md:agrid-3">
+      {
+        articleInfo.map((article) => (
+          <li>
+            <article class="post">
+              <a class="clean" href={`blog/${article.slug}`}>
+                <div class="blogpost-thumbnail">
+                  <img
+                    class="blogpost-thumbnail__img"
+                    src={article.imgData.url}
+                    alt={article.imgData.alt_desc}
+                  />
+                </div>
+              </a>
+              <a href={`blog/${article.slug}`}>
+                <h3>{article.title}</h3>
+              </a>
+              <p>{article.excerpt} ...</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .title-1 {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .post {
+    * + * {
+      margin-top: 1rem;
+    }
+    h3 {
+      text-align: center;
+      font-size: 1.25rem;
+    }
+    p {
+      color: var(--clr-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+  }
+</style>

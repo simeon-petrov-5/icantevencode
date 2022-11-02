@@ -1,0 +1,56 @@
+<header class="header">
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a class="clean" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="clean" href="/blog">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="clean" href="/#contacts-title">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+  .header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: var(--clr-page);
+    width: 100%;
+    padding: 0.5rem 2rem;
+    z-index: 100;
+
+    .nav-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      .nav-item {
+        font-size: 1.25rem;
+        a {
+          text-decoration: none;
+          color: var(--clr-primary);
+          transition: color 300ms ease-in-out;
+          &:hover {
+            color: var(--clr-primary-3);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .header .nav-list {
+      justify-content: end;
+    }
+  }
+
+  @media screen and (min-width: 1600px) {
+    .header {
+      background-color: transparent;
+    }
+  }
+</style>

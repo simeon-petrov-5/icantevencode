@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/layout.astro";
+import Hero from "@components/sections/Hero.astro";
+import About from "@components/sections/About.astro";
+import TechStack from "@components/sections/TechStack.astro";
+import CurrentWork from "@components/sections/CurrentWork.vue";
+---
+
+<script src="../assets/js/aos.js" />
+
+<Layout title="Welcome to Astro.">
+  <Hero />
+  <About />
+  <TechStack />
+  <CurrentWork client:idle />
+</Layout>

@@ -1,0 +1,15 @@
+@use "./reset.scss";
+@use "./typography.scss";
+@use "./colors.scss";
+@use "./tokens.scss";
+@use "./utillity.scss";
+@use "./components.scss";
+@use "./animations.scss";
+@use "alpha-grid/dist/scss/agrid.scss";
+
+@import 'aos/dist/aos.css';
+
+:root {
+  background-color: var(--clr-page);
+  scroll-behavior: smooth;
+}
