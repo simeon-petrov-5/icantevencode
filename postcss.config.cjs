@@ -1,4 +1,7 @@
-const purgecss = require('@fullhuman/postcss-purgecss')
+const purgecss = require('@fullhuman/postcss-purgecss');
+const advancedPreset  = require( 'cssnano-preset-advanced');
+const preset = advancedPreset({ zindex: false, discardComments: { removeAll: true } });
+
 const aosWhitelist = [
   "aos-init",
   "aos-animate",
@@ -17,9 +20,9 @@ const aosWhitelist = [
 
 module.exports = {
   plugins: [
-    require('autoprefixer')({ grid: 'autoplace' }),
     require('cssnano')({
-      preset: ['advanced', { zindex: false, discardComments: { removeAll: true } }]
+      preset,
+      plugins: [['autoprefixer', {grid: 'autoplace'}]]
     }),
     purgecss({
       content: ['./src/**/*.{astro,vue,html}'],

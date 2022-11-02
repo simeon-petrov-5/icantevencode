@@ -77,7 +77,7 @@ const onSubmit = () => {
     >
       <input type="hidden" name="form-name" value="ask-question" />
 
-      <div class="name sm:acol-5">
+      <div class="name acol-12 sm:acol-5">
         <input
           id="name"
           type="text"
@@ -92,7 +92,7 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <div class="email sm:acol-7">
+      <div class="email acol-12 sm:acol-7">
         <input
           id="email"
           type="email"
@@ -124,9 +124,9 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <button type="submit" class="btn sm:acol-4">Send</button>
+      <button type="submit" class="btn acol-12 sm:acol-4">Send</button>
 
-      <div class="sm:acol-8">
+      <div class="acol-12 sm:acol-8">
         <div data-netlify-recaptcha="true"></div>
       </div>
     </form>
