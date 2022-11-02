@@ -168,7 +168,7 @@ const onSubmit = () => {
       textarea {
         width: 100%;
         background-color: transparent;
-        border: 2px solid var(--clr-primary-3);
+        border: 2px solid var(--clr-primary-d2);
         padding: var(--input-py) 1rem;
         color: var(--clr-text);
         border-radius: 0.325rem;
@@ -196,9 +196,9 @@ const onSubmit = () => {
       width: 100%;
       margin-top: var(--input-container-pt);
 
-      border: 2px solid var(--clr-primary-3);
+      border: 2px solid var(--clr-primary-d2);
       background-color: transparent;
-      color: var(--clr-primary-3);
+      color: var(--clr-primary-d2);
       border-radius: 0.325rem;
       padding: 0.5rem 0.25rem;
       text-transform: uppercase;
@@ -206,7 +206,7 @@ const onSubmit = () => {
       transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 
       &:hover {
-        background-color: var(--clr-primary-3);
+        background-color: var(--clr-primary-d2);
         color: var(--dark-9);
       }
     }
