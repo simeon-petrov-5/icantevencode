@@ -55,7 +55,7 @@ The other thing is that usually, every JavaScript-based SSG generator in my expe
 ### Lighthouse data
 Both websites were tested multiple times (10) after being deployed on Netlify. The average results are: 
 
-| Category                 | SSG + Vue | (Astro + Vue) |
+| Category                 | Vite SSG | Astro |
 | ------------------------ | --------- | ------------- |
 | Performance score        | 89        | **99**        |
 | First Contentful Paint   | 1.6 s     | 1.6 s         |
@@ -72,7 +72,7 @@ Both websites were tested multiple times (10) after being deployed on Netlify. T
 ### Netlify build times
 The build time on Netlify is also something that improves, although with currently 5 pages is not something major to track.
 
-| SSG + Vue | (Astro + Vue) |
+| Vite SSG | Astro |
 | --------- | ------------- |
 | 37s       | 25 s          |
 
@@ -80,7 +80,7 @@ The build time on Netlify is also something that improves, although with current
 ### Overall file-size
 The `/dist` folder size was also something I wanted to track and see if there was a difference
 
-| Category     | SSG + Vue | (Astro + Vue) |
+| Category     | Vite SSG | Astro |
 | ------------ | --------- | ------------- |
 | Size         | 262 KB    | *211 KB*      |
 | Size on disk | 296 KB    | *244 KB*      |
