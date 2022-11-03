@@ -8,9 +8,9 @@ This project is my personal website [icantevencode.com](https://icantevencode.co
 - 🎨 SASS
 - 🧹 PostCSS - PurgeCSS + cssnano
 - 🌩️ Netlify + Netlify Forms
+- 🦔 Critical CSS (astro-critters)
 
 ## 📝 More stuff to check
-- [ ] Critical CSS (Critters via ViteSSG)
 - [ ] Blog: Add tags and sort in the blog page
 - [ ] CSS: Play around with design tokes & SCSS vs CSS variables
 - [ ] Add analytics like https://splitbee.io/docs/javascript-library

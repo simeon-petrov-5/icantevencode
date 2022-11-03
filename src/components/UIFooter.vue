@@ -145,9 +145,6 @@ const onSubmit = () => {
     --input-container-pt: 17px;
     --input-py: 0.5rem;
 
-    display: grid;
-    gap: 8px;
-
     max-width: 720px;
     margin-inline: auto;
 

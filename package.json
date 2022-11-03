@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "astro": "^1.6.0",
     "astro-compress": "^1.1.1",
+    "astro-critters": "^1.1.0",
     "cssnano": "^5.1.13",
     "cssnano-preset-advanced": "^5.3.8",
     "node-fetch": "^3.2.10",
