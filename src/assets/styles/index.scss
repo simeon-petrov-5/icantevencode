@@ -1,13 +1,12 @@
 @use "./reset.scss";
-@use "./typography.scss";
-@use "./colors.scss";
-@use "./tokens.scss";
-@use "./utillity.scss";
-@use "./components.scss";
-@use "./animations.scss";
-@use "alpha-grid/dist/scss/agrid.scss";
 
-@import 'aos/dist/aos.css';
+@use "./partials/tokens";
+@use "./partials/typography";
+@use "./partials/utillity";
+@use "./partials/components";
+@use "./partials/animations";
+
+@use "alpha-grid/dist/scss/agrid.scss";
 
 :root {
   background-color: var(--clr-page);

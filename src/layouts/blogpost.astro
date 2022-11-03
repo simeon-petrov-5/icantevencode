@@ -16,14 +16,10 @@ const { title } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
-<script>
-  import "../assets/js/aos.js";
-</script>
-
 <body>
   <UIHeader />
   <main>
-    <div class="blogpost section section--sm">
+    <div class="blogpost ds__section--sm">
       <slot />
     </div>
   </main>

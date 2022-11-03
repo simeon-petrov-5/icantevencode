@@ -53,10 +53,10 @@ const onSubmit = () => {
 </script>
 
 <template>
-  <section id="section-contacts" class="section section--sm contacts">
-    <h2 id="contacts-title" class="title-1" data-aos="fade-up">Contacts</h2>
+  <section id="section-contacts" class="ds__section--sm contacts">
+    <h2 id="contacts-title" class="ds__title--xl" data-aos="fade-up">Contacts</h2>
     <div style="overflow: hidden">
-      <p class="text" data-aos="fade-left" data-aos-delay="300">
+      <p class="ds__text" data-aos="fade-left" data-aos-delay="300">
         Find me on
         <a href="https://www.linkedin.com/in/simeonpetrov5/" target="__blank">
           LinkedIn
@@ -137,8 +137,8 @@ const onSubmit = () => {
 <style lang="scss" scoped>
 .contacts {
   position: relative;
-  .title-1,
-  .text {
+  .ds__title--xl,
+  .ds__text {
     text-align: right;
   }
   .form {

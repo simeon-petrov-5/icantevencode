@@ -29,12 +29,12 @@ const cells = computed(() => columns.value * rows.value);
       </div>
     </div>
 
-    <div class="section section--sm">
-      <h2 class="title-1" data-aos="fade-up">
+    <div class="ds__section--sm">
+      <h2 class="ds__title--xl" data-aos="fade-up">
         What's currently keeping me up at night? 🧠
       </h2>
       <ul class="topics" role="list" data-aos="fade-up">
-        <li v-for="topic in topics" :key="topic" class="text topics__item">
+        <li v-for="topic in topics" :key="topic" class="ds__text topics__item">
           {{ topic }}
         </li>
       </ul>
@@ -54,7 +54,7 @@ const cells = computed(() => columns.value * rows.value);
 
 #section-current-work {
   position: relative;
-  .title-1 {
+  .ds__title--xl {
     text-align: center;
     line-height: 1.2;
     margin-bottom: 3rem;

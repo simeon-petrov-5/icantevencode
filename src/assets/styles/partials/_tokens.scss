@@ -1,5 +1,5 @@
 :root {
-  /* Base */
+  /* --- Base ---*/
   --green-0: #ebfbee;
   --green-1: #d3f9d8;
   --green-2: #b2f2bb;
@@ -65,10 +65,9 @@
   --dark-8: #090e12;
   --dark-9: #050709;
 
-  /* Primary */
-
+  /* --- Primary ---*/
   --clr-primary: var(--lime-4);
-  
+
   --clr-primary-l1: var(--lime-3);
   --clr-primary-l2: var(--lime-2);
   --clr-primary-l3: var(--lime-1);
@@ -78,9 +77,8 @@
   --clr-primary-d2: var(--lime-6);
   --clr-primary-d3: var(--lime-7);
   --clr-primary-d4: var(--lime-8);
-  
 
-  /* Utils */
+  /* --- Utils --- */
   --clr-page: var(--dark-7);
   --clr-danger: #cc7c6a;
   --clr-warn: #5e98ba;
@@ -89,4 +87,14 @@
   --clr-white: var(--gray-1);
   --clr-text: var(--gray-1);
   --clr-label: var(--gray-4);
+
+  /* --- Shadows --- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 }

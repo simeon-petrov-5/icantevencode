@@ -14,18 +14,18 @@ for (let article of articles) {
 ---
 
 <Layout title="Blog">
-  <section class="section section--sm">
-    <h1 class="title-1">Sometimes I try to write stuff</h1>
+  <section class="ds__section--sm">
+    <h1 class="ds__title--xl">Sometimes I try to write stuff</h1>
 
     <ul class="agrid-2 md:agrid-3" role="list">
       {
         articleInfo.map((article) => (
           <li>
             <article class="post">
-              <a class="clean" href={`/blog/${article.slug}`}>
-                <div class="blogpost-thumbnail">
+              <a class="ds__link--clean" href={`/blog/${article.slug}`}>
+                <div class="ds__blogpost-thumbnail">
                   <img
-                    class="blogpost-thumbnail__img"
+                    class="ds__blogpost-thumbnail__img"
                     src={article.imgData.url}
                     alt={article.imgData.alt_desc}
                   />
@@ -44,7 +44,7 @@ for (let article of articles) {
 </Layout>
 
 <style lang="scss">
-  .title-1 {
+  .ds__title--xl {
     margin-bottom: 3rem;
     text-align: center;
   }

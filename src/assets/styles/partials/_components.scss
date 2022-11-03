@@ -1,5 +1,5 @@
 /* Links */
-a:not(.clean) {
+a:not(.ds__link--clean) {
   display: inline-block;
   color: var(--green-9);
   transition: color 300ms ease-in-out;
@@ -28,7 +28,7 @@ a:not(.clean) {
 
 // Blogpost Thumbnail
 
-.blogpost-thumbnail {
+.ds__blogpost-thumbnail {
   border-radius: 0.5rem;
   overflow: hidden;
   aspect-ratio: 16 / 9;

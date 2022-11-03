@@ -12,7 +12,6 @@ This project is my personal website [icantevencode.com](https://icantevencode.co
 
 ## 📝 More stuff to check
 - [ ] Blog: Add tags and sort in the blog page
-- [ ] CSS: Play around with design tokes & SCSS vs CSS variables
 - [ ] Add analytics like https://splitbee.io/docs/javascript-library
 - [ ] Add cookies module & page
 
