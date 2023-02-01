@@ -1,0 +1,62 @@
+---
+import type { ArticleDetails } from "src/utils/notion";
+import Tags from "./Tags.astro";
+// import getUnsplashData from "src/utils/unsplash";
+// const imgData = await getUnsplashData(frontmatter);
+
+export interface Props {
+  data: ArticleDetails;
+}
+
+const { data } = Astro.props;
+const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
+---
+
+<div class="article-header">
+  <h1>
+    {data.title}
+  </h1>
+
+  <p class="date">{date} by Simeon Petrov</p>
+
+  <div class="ds__blogpost-thumbnail">
+    <img
+      class="ds__blogpost-thumbnail__img"
+      src={data.cover}
+      alt={`Thumbnail for ${data.title}`}
+    />
+  </div>
+
+  <Tags items={data.tags} />
+
+  <!-- <div class="ds__blogpost-thumbnail">
+    <img
+      class="ds__blogpost-thumbnail__img"
+      src={imgData.url}
+      alt={imgData.alt_desc}
+    />
+  </div>
+  <a
+    class="img-url"
+    href={`https://unsplash.com/photos/${frontmatter.unsplashId}`}
+    title="Image on usplash"
+    target="_blank"
+  >
+    Image on Usplash - {imgData.desc} by {imgData.username}
+  </a> -->
+</div>
+
+<style lang="scss">
+  .article-header {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .date {
+      margin-bottom: 1.25rem;
+      padding: 0;
+      color: var(--gray-3);
+    }
+  }
+</style>

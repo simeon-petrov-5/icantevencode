@@ -1,0 +1,8 @@
+---
+interface Props {
+  block: any;
+}
+const { block } = Astro.props as Props;
+---
+
+<p>⚠️ Unsupported block: {block.type}</p>

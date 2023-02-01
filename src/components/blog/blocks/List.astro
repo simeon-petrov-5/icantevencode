@@ -1,0 +1,21 @@
+---
+import type { BulletedListItemBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
+interface Props {
+  block: {
+    type: string;
+    list_items: BulletedListItemBlockObjectResponse[];
+  };
+}
+
+const { block } = Astro.props as Props;
+
+---
+
+<ul>
+  {
+    block.list_items.map((item) => {
+      return <li>{item[item.type].rich_text[0].plain_text}</li>;
+    })
+  }
+</ul>

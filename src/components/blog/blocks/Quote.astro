@@ -1,0 +1,26 @@
+---
+import type { QuoteBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
+interface Props {
+  block: QuoteBlockObjectResponse;
+}
+
+const { block } = Astro.props as Props;
+
+const quoteBlock: QuoteBlockObjectResponse["quote"] =
+  block[block.type];
+---
+
+<blockquote>
+  <p>
+    {
+      quoteBlock.rich_text.map((part) => {
+        if (part.href) {
+          return <a href={part.href} title={part.plain_text} target="_blank">{part.plain_text}</a>;
+        }
+  
+        return part.plain_text
+      })
+    }
+  </p>
+</blockquote>

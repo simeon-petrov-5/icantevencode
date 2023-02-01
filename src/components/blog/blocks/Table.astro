@@ -1,0 +1,38 @@
+---
+import type {
+  TableBlockObjectResponse,
+  TableRowBlockObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
+import { fetchBlockChildren } from "src/utils/notion";
+
+interface Props {
+  block: TableBlockObjectResponse;
+}
+
+const { block } = Astro.props as Props;
+
+const tableChild: TableRowBlockObjectResponse[] = (await fetchBlockChildren(
+  block.id
+)) as any;
+
+const [head, ...rows] = tableChild;
+---
+
+<table>
+  <thead>
+    <tr>
+      {head.table_row.cells.map((cell) => <th>{cell[0].plain_text}</th>)}
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((row) => (
+        <tr>
+          {row.table_row.cells.map((cell) => (
+            <td>{cell[0].plain_text}</td>
+          ))}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

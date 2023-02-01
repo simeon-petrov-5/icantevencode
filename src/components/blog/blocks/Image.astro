@@ -1,0 +1,23 @@
+---
+import type { ImageBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+
+interface Props {
+  block: ImageBlockObjectResponse;
+  title: string;
+}
+
+const { block, title } = Astro.props as Props;
+
+const imgBlock: ImageBlockObjectResponse["image"] = block[block.type];
+
+const url = (imgBlock as any)[imgBlock.type].url;
+---
+
+<img src={url} alt={`Picutre for ${title}`} />
+
+<style scoped>
+  img {
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+  }
+</style>

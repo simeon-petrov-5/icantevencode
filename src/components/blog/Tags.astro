@@ -1,0 +1,79 @@
+---
+interface Props {
+  items: string[];
+  position?: "left";
+  small?: boolean;
+}
+
+const { items, position, small } = Astro.props as Props;
+---
+
+<ul class={`tags ${position ? position : ""}`} role="list">
+  {
+    items.map((tag) => (
+      <li class={`tag ${small ? "small" : ""}`} data-tag={tag.toLowerCase()}>
+        {tag.toUpperCase()}
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  .tags {
+    display: flex;
+    gap: 1rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &.left {
+      justify-content: flex-start;
+    }
+
+    .tag {
+      padding: 0.25rem 1.25rem;
+      border-radius: 0.375rem;
+      border: 1px solid var(--tag-clr, var(--cyan-7));
+      background-color: var(--tag-clr-bg, var(--cyan-1));
+      color: var(--tag-clr, var(--cyan-7));
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 0.75rem;
+      font-family: monospace;
+
+      &.small {
+        padding: 0.125rem 1rem;
+      }
+
+      &[data-tag="html"] {
+        --tag-clr: var(--orange-7);
+        --tag-clr-bg: var(--orange-1);
+      }
+      &[data-tag="css"] {
+        --tag-clr: var(--blue-7);
+        --tag-clr-bg: var(--blue-1);
+      }
+      &[data-tag="sass"] {
+        --tag-clr: var(--purple-7);
+        --tag-clr-bg: var(--purple-1);
+      }
+      &[data-tag="js"] {
+        --tag-clr: var(--yellow-7);
+        --tag-clr-bg: var(--yellow-1);
+      }
+      &[data-tag="ts"] {
+        --tag-clr: var(--indigo-7);
+        --tag-clr-bg: var(--indigo-1);
+      }
+      &[data-tag="node"] {
+        --tag-clr: var(--camo-7);
+        --tag-clr-bg: var(--camo-1);
+      }
+      &[data-tag="vue"] {
+        --tag-clr: var(--lime-7);
+        --tag-clr-bg: var(--lime-1);
+      }
+    }
+  }
+</style>
