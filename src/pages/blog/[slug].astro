@@ -1,13 +1,16 @@
 ---
 import Blogpostlayout from "src/layouts/blogpost.astro";
-import BlogHeader from "@components/BlogHeader.astro";
+import { ArticleDetails, fetchBlocks, fetchArticles } from "src/utils/notion";
+import BlocksRenderer from "@components/blog/BlocksRenderer.astro";
+import ArticleHeader from "@components/blog/ArticleHeader.astro";
 
 export async function getStaticPaths() {
-  const articles = await Astro.glob("../../articles/*.md");
+  // const articles = await Astro.glob("../../articles/*.md");
+  const articles = await fetchArticles();
 
   return articles.map((article) => ({
     params: {
-      slug: article.frontmatter.slug,
+      slug: article.slug,
     },
     props: {
       article,
@@ -15,10 +18,118 @@ export async function getStaticPaths() {
   }));
 }
 
-const { Content, frontmatter } = Astro.props.article;
+const article = Astro.props.article as ArticleDetails;
+
+const blocks = await fetchBlocks(article.id)
 ---
 
-<Blogpostlayout title={frontmatter.title}>
-  <BlogHeader frontmatter={frontmatter}/>
-  <Content />
+<Blogpostlayout title={article.title}>
+  <ArticleHeader data={article} />
+  <BlocksRenderer className="blogpost" title={article.title} items={blocks} />
 </Blogpostlayout>
+
+
+<style lang="scss" is:global>
+  .blogpost {
+    color: white;
+
+    .astro-code {
+      padding: 1rem 1.25rem;
+      font-size: 1rem;
+    }
+
+    hr {
+      color: var(--clr-primary-d2);
+      margin-block: 3rem;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: revert;
+    }
+
+    .sub-title {
+      color: var(--clr-label);
+      text-align: center;
+      font-style: italic;
+      font-size: 1rem;
+    }
+    p {
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      line-height: 1.5;
+    }
+    // Lists
+    ul,
+    ol {
+      display: block;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 40px;
+    }
+    ol {
+      list-style: decimal;
+    }
+    ul {
+      list-style: disc;
+    }
+
+    // Blockquote
+    blockquote {
+      background-color: transparent;
+      border-left: 10px solid var(--clr-primary-d2);
+      margin: 1.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+    blockquote:before {
+      color: var(--clr-primary-d2);
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+    blockquote p {
+      display: inline;
+    }
+
+    // Tables
+    table {
+      width: 100%;
+      background-color: var(--clr-primary-l3);
+      border-collapse: collapse;
+      border-width: 2px;
+      border-color: #ffcc00;
+      border-style: solid;
+      color: #000000;
+    }
+
+    table td,
+    table th {
+      border-width: 2px;
+      border-color: var(--clr-primary-d3);
+      border-style: solid;
+      padding: 0.25rem 0.75rem;
+    }
+
+    table thead {
+      background-color: var(--clr-primary-d3);
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+</style>
