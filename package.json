@@ -1,8 +1,12 @@
 {
-  "name": "@example/basics",
+  "name": "icantevencode",
   "type": "module",
-  "version": "0.0.1",
+  "version": "3.0.0",
   "private": true,
+  "author": {
+    "name": "Simeon Petrov",
+    "url": "https://github.com/simeon-petrov-5"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,21 +15,21 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/vue": "^1.2.1",
+    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/vue": "^2.0.1",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@notionhq/client": "^2.2.3",
-    "@vueuse/core": "^9.4.0",
+    "@vueuse/core": "^9.12.0",
     "alpha-grid": "^1.5.0",
     "aos": "^2.3.4",
-    "astro": "^1.6.0",
-    "astro-compress": "^1.1.1",
-    "astro-critters": "^1.1.0",
-    "cssnano": "^5.1.13",
-    "cssnano-preset-advanced": "^5.3.8",
-    "node-fetch": "^3.2.10",
-    "sass": "^1.55.0",
+    "astro": "^2.0.9",
+    "astro-compress": "^1.1.31",
+    "astro-critters": "^1.1.29",
+    "cssnano": "^5.1.14",
+    "cssnano-preset-advanced": "^5.3.9",
+    "node-fetch": "^3.3.0",
+    "sass": "^1.58.0",
     "unsplash-js": "^7.0.15",
-    "vue": "^3.2.41"
+    "vue": "^3.2.47"
   }
 }
