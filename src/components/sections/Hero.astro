@@ -1,4 +1,7 @@
 ---
+import { Image } from "@astrojs/image/components";
+import heroImage from "../../assets/imgs/me-myself.jpg";
+
 const codePerson = `const person = { 
   firstName: "Simeon", 
   lastName: "Petrov" 
@@ -23,7 +26,15 @@ const codeAbout = `const about = {
       data-aos="fade-up"
       data-aos-delay="700"
     >
-      <img class="img" src="/assets/me-myself.jpg" alt="Simeon photo" />
+      <!-- <img class="img" src="/assets/me-myself.jpg" alt="Simeon photo" /> -->
+      <Image
+        class="img"
+        src={heroImage}
+        width={380}
+        aspectRatio="2:3"
+        format="webp"
+        alt="Simeon photo"
+      />
     </div>
 
     <div class="codes">
@@ -32,14 +43,14 @@ const codeAbout = `const about = {
         data-aos-anchor="#hero-image"
         data-aos-anchor-placement="top-bottom"
         data-aos="fade-left"
-        data-aos-delay="1000">{ codePerson }</code
+        data-aos-delay="1000">{codePerson}</code
       >
       <code
         class="code"
         data-aos-anchor="#hero-image"
         data-aos-anchor-placement="top-bottom"
         data-aos="fade-left"
-        data-aos-delay="1400">{ codeAbout }</code
+        data-aos-delay="1400">{codeAbout}</code
       >
     </div>
   </div>
@@ -64,11 +75,19 @@ const codeAbout = `const about = {
       color: var(--clr-primary-d2);
       margin-bottom: 3rem;
     }
-    .img {
+
+    .imgWrapper {
       width: 100%;
       max-width: 400px;
-      border-radius: 1rem;
+      aspect-ratio: 1 / 1;
       margin: 0 auto 3rem;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 1rem;
+      }
     }
     .title span {
       display: block;
@@ -128,9 +147,7 @@ const codeAbout = `const about = {
         grid-area: img;
         aspect-ratio: 2 / 3;
         .img {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
+          object-position: center;
         }
       }
       .title {
