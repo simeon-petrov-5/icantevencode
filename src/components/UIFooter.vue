@@ -54,7 +54,9 @@ const onSubmit = () => {
 
 <template>
   <section id="section-contacts" class="ds__section--sm contacts">
-    <h2 id="contacts-title" class="ds__title--xl" data-aos="fade-up">Contacts</h2>
+    <h2 id="contacts-title" class="ds__title--xl" data-aos="fade-up">
+      Contacts
+    </h2>
     <div style="overflow: hidden">
       <p class="ds__text" data-aos="fade-left" data-aos-delay="300">
         Find me on
@@ -68,6 +70,7 @@ const onSubmit = () => {
       class="form agrid"
       name="ask-question"
       method="post"
+      netlify-honeypot="honey-field"
       data-netlify="true"
       action="/submission-success"
       data-aos="fade-up"
@@ -76,6 +79,12 @@ const onSubmit = () => {
       @submit.prevent="onSubmit"
     >
       <input type="hidden" name="form-name" value="ask-question" />
+
+      <p class="hidden">
+        <label>
+          Don't fill this out if you're human: <input name="honey-field" />
+        </label>
+      </p>
 
       <div class="name acol-12 sm:acol-5">
         <input
@@ -124,12 +133,7 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <div class="acol-12">
-        <div data-netlify-recaptcha="true"></div>
-      </div>
-
       <button type="submit" class="btn acol-12 sm:acol-4">Send</button>
-
     </form>
   </section>
 </template>
