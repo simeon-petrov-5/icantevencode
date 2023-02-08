@@ -80,12 +80,6 @@ const onSubmit = () => {
     >
       <input type="hidden" name="form-name" value="ask-question" />
 
-      <p class="hidden">
-        <label>
-          Don't fill this out if you're human: <input name="honey-field" />
-        </label>
-      </p>
-
       <div class="name acol-12 sm:acol-5">
         <input
           id="name"
@@ -99,6 +93,14 @@ const onSubmit = () => {
         <transition>
           <span v-if="nameError" class="error">Tell me your name!</span>
         </transition>
+
+        <p
+          style="visibility: hidden; height: 0px; width: 0px; overflow: hidden"
+        >
+          <label>
+            Don't fill this out if you're human: <input name="honey-field" />
+          </label>
+        </p>
       </div>
 
       <div class="email acol-12 sm:acol-7">
