@@ -16,7 +16,8 @@ const aosWhitelist = [
   "agrid-1", 
   "agrid-2", 
   "md:agrid-3",
-  /^sm:acol-/
+  /^sm:acol-/,
+  /^:where/,
 ];
 
 module.exports = {
