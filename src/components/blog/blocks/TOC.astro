@@ -1,0 +1,62 @@
+---
+import type { TableOfContentsBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { fetchBlockChildren } from "src/utils/notion";
+
+interface Props {
+  groupedData: any[];
+}
+
+const { groupedData } = Astro.props as Props;
+
+const headingTypes = ["heading_2", "heading_3"];
+const filteredHeadings = groupedData.filter((group) =>
+  headingTypes.includes(group.type)
+);
+const groupedHeadings: any[] = [];
+filteredHeadings.forEach((heading) => {
+  if (heading.type === "heading_2") {
+    groupedHeadings.push({ section: heading, subsection: [] });
+  } else if (heading.type === "heading_3") {
+    const lastGroup = groupedHeadings[groupedHeadings.length - 1];
+    if (lastGroup) {
+      // Higher section exists
+      lastGroup.subsection.push(heading);
+    } else {
+      groupedHeadings.push({ section: heading });
+    }
+  }
+});
+
+console.log("headings", groupedHeadings[0]);
+---
+
+<ol class="toc-list" role="list">
+  {
+    groupedHeadings.map(({ section, subsection }) => {
+      return (
+        <li>
+          <a href="#link_to_heading">
+            <span class="title">
+              {section[section.type].rich_text[0].plain_text}
+            </span>
+          </a>
+          {subsection.length ? (
+            <ol role="list">
+              {subsection.map((section: any) => {
+                return (
+                  <li>
+                    <a href="#link_to_heading">
+                      <span class="title">
+                        {section[section.type].rich_text[0].plain_text}
+                      </span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          ):<></>}
+        </li>
+      );
+    })
+  }
+</ol>

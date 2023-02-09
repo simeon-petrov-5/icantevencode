@@ -9,12 +9,23 @@ interface Props {
 }
 
 const { block } = Astro.props as Props;
-
 ---
 
 <ul>
   {
     block.list_items.map((item) => {
+      if (item[item.type].rich_text[0].href) {
+        return (
+          <li>
+            <a
+              href={item[item.type].rich_text[0].href}
+              title={item[item.type].rich_text[0].plain_text}
+            >
+              {item[item.type].rich_text[0].plain_text}
+            </a>
+          </li>
+        );
+      }
       return <li>{item[item.type].rich_text[0].plain_text}</li>;
     })
   }

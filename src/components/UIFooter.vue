@@ -198,10 +198,9 @@ const onSubmit = () => {
     .btn {
       width: 100%;
       margin-top: var(--input-container-pt);
-
       border: 2px solid var(--clr-primary-d2);
-      background-color: transparent;
       color: var(--clr-primary-d2);
+      text-align: center;
       border-radius: 0.325rem;
       padding: 0.5rem 0.25rem;
       text-transform: uppercase;

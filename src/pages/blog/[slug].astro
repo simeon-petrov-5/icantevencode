@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 const article = Astro.props.article as ArticleDetails;
 
-const blocks = await fetchBlocks(article.id)
+const blocks = await fetchBlocks(article.id);
 ---
 
 <Blogpostlayout title={article.title}>
@@ -28,10 +28,10 @@ const blocks = await fetchBlocks(article.id)
   <BlocksRenderer className="blogpost" title={article.title} items={blocks} />
 </Blogpostlayout>
 
-
 <style lang="scss" is:global>
   .blogpost {
     color: white;
+    font-size: 1.25rem;
 
     .astro-code {
       padding: 1rem 1.25rem;
@@ -62,7 +62,6 @@ const blocks = await fetchBlocks(article.id)
       font-size: 1rem;
     }
     p {
-      font-size: 1.25rem;
       letter-spacing: 1px;
       line-height: 1.5;
     }
