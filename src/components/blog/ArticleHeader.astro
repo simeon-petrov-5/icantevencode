@@ -1,5 +1,5 @@
 ---
-import { Picture  } from '@astrojs/image/components';
+import { Picture } from "@astrojs/image/components";
 import type { ArticleDetails } from "src/utils/notion";
 import Tags from "./Tags.astro";
 // import getUnsplashData from "src/utils/unsplash";
@@ -18,7 +18,10 @@ const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
     {data.title}
   </h1>
 
-  <p class="date">{date} by Simeon Petrov</p>
+  <p class="meta">
+    <time datetime={data.lastEdited}>{date}</time>
+    by Simeon Petrov
+  </p>
 
   <div class="ds__blogpost-thumbnail">
     <Picture
@@ -59,7 +62,7 @@ const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
     text-align: center;
     margin-bottom: 2rem;
 
-    .date {
+    .meta {
       margin-bottom: 1.25rem;
       padding: 0;
       color: var(--gray-3);
