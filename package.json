@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.14.1",
+    "@astrojs/partytown": "^1.0.3",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/vue": "^2.0.1",
     "@fullhuman/postcss-purgecss": "^5.0.0",

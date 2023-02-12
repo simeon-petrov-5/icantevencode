@@ -8,10 +8,13 @@ import critters from "astro-critters";
 import image from "@astrojs/image";
 
 // https://astro.build/config
+import partytown from "@astrojs/partytown";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://icantevencode.com',
   integrations: [vue(), sitemap(), compress({
     css: false,
     html: false
-  }), critters(), image()]
+  }), critters(), image(), partytown()]
 });
