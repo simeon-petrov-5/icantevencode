@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/layout.astro";
+
+const livestreams = [
+  {
+    name: "🇧🇬 Courses Web - Изграждане на уебсайт HTML/SASS/Gulp/AlpineJS",
+    date: "Wednesday, March 1, 2023",
+    time: "7 PM - 9 PM GMT+2",
+  },
+  {
+    name: "🇧🇬 Courses Web - Изграждане на уебсайт HTML/SASS/Gulp/AlpineJS",
+    date: "Wednesday, March 8, 2023",
+    time: "7 PM - 9 PM GMT+2",
+  },
+  {
+    name: "🇧🇬 AstroJS - Ръчкане из PurgeCSS, Critters, Compress, и тн.",
+    date: "Wednesday, March 15, 2023",
+    time: "7 PM - 9 PM GMT+2",
+  },
+  {
+    name: "🇧🇬 Courses Web - Изграждане на уебсайт HTML/SASS/Gulp/AlpineJS",
+    date: "Wednesday, March 22, 2023",
+    time: "7 PM - 9 PM GMT+2",
+  },
+];
+---
+
+<Layout title="Home">
+  <h1 class="ds__section--sm">Videos and 🚨 Live Streamig 🚨</h1>
+
+  <section class="ds__section--sm">
+    <h2 class="ds__title--lg">Videos</h2>
+
+    <div>
+      <h3>Advent of vue 2022 🇧🇬 (19 clips)</h3>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/5zjMGC6l2yo"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="ds__section--sm schedule">
+    <h2 class="ds__title--lg">🚨 Livestream Schedule</h2>
+
+    <ul class="schedule" role="list">
+      {
+        livestreams.map((livestream) => {
+          return (
+            <li class="event">
+              <article class="stream">
+                <div class="content">
+                  <h3 class="title">{livestream.name}</h3>
+                  <div class="release">
+                    <p class="date">
+                      {livestream.date} · {livestream.time}
+                    </p>
+                    <p class="text">Streams every Wednesday</p>
+                  </div>
+
+                  <ul class="links" role="list">
+                    <li>
+                      <a
+                        href="https://www.youtube.com/channel/UCPG8KezVTaixto9CgtyB5dg"
+                        target="_blank"
+                      >
+                        <img
+                          src="/assets/logo-youtube.png"
+                          alt="youtube logo"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.twitch.tv/icantevencode"
+                        target="_blank"
+                      >
+                        <img src="/assets/logo-twitch.png" alt="twitch logo" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <img
+                  class="thumbnail"
+                  src="https://static-cdn.jtvnw.net/ttv-boxart/1469308723-144x192.jpg"
+                  alt="Stream image"
+                />
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .schedule {
+    .event + .event {
+      margin-top: 1.25rem;
+    }
+
+    .stream {
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 1px solid var(--clr-page);
+      background-color: var(--dark-5);
+      box-shadow: var(--gray-8) 0px 0px 0.3rem 0.1rem;
+
+      .content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.5rem 1.25rem;
+
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        .title {
+          color: var(--clr-primary);
+          font-size: 1.25rem;
+        }
+        .release {
+          color: var(--clr-primary-l2);
+          margin-top: auto;
+          font-size: 1rem;
+        }
+
+        .links {
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+
+          img {
+            width: 48px;
+          }
+        }
+      }
+
+      .thumbnail {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .schedule .stream {
+      display: flex;
+
+      .thumbnail {
+        display: inline-block;
+        max-width: 132px;
+      }
+    }
+  }
+</style>

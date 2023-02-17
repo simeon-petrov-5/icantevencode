@@ -17,3 +17,9 @@
   max-width: calc(900px + 2 * var(--inline-padding));
   margin-inline: auto;
 }
+
+.ds__section--md {
+  @extend .ds__section;
+  max-width: calc(1200px + 2 * var(--inline-padding));
+  margin-inline: auto;
+}
