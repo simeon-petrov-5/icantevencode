@@ -58,8 +58,14 @@ const onSubmit = () => {
       Contacts
     </h2>
     <div style="overflow: hidden">
-      <p class="ds__text" data-aos="fade-left" data-aos-delay="300">
+      <p class="ds__text socials" data-aos="fade-left" data-aos-delay="300">
         Find me on
+        <a href="https://www.youtube.com/channel/UCPG8KezVTaixto9CgtyB5dg" target="__blank">
+          YouTube
+        </a>
+        <a href="https://www.twitch.tv/icantevencode" target="__blank">
+          Twitch
+        </a>
         <a href="https://www.linkedin.com/in/simeonpetrov5/" target="__blank">
           LinkedIn
         </a>
@@ -146,6 +152,13 @@ const onSubmit = () => {
   .ds__title--xl,
   .ds__text {
     text-align: right;
+  }
+
+  .socials{
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+    flex-wrap: wrap;
   }
   .form {
     --input-container-pt: 17px;
