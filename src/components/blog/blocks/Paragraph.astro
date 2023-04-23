@@ -1,5 +1,6 @@
 ---
 import type { ParagraphBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import InlineCode from "./InlineCode.astro";
 
 interface Props {
   block: ParagraphBlockObjectResponse;
@@ -15,10 +16,17 @@ const paragraphBlock: ParagraphBlockObjectResponse["paragraph"] =
   {
     paragraphBlock.rich_text.map((part) => {
       if (part.href) {
-        return <a href={part.href} title={part.plain_text} target="_blank">{part.plain_text}</a>;
+        return (
+          <a href={part.href} title={part.plain_text} target="_blank">
+            {part.plain_text}
+          </a>
+        );
+      }
+      if(part.annotations.code){
+        return <InlineCode>{part.plain_text}</InlineCode>
       }
 
-      return part.plain_text
+      return part.plain_text;
     })
   }
 </p>
