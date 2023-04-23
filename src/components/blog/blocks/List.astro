@@ -1,5 +1,6 @@
 ---
 import type { BulletedListItemBlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import InlineCode from "./InlineCode.astro";
 
 interface Props {
   block: {
@@ -14,19 +15,23 @@ const { block } = Astro.props as Props;
 <ul>
   {
     block.list_items.map((item) => {
-      if (item[item.type].rich_text[0].href) {
-        return (
-          <li>
-            <a
-              href={item[item.type].rich_text[0].href}
-              title={item[item.type].rich_text[0].plain_text}
-            >
-              {item[item.type].rich_text[0].plain_text}
-            </a>
-          </li>
-        );
-      }
-      return <li>{item[item.type].rich_text[0].plain_text}</li>;
+      return (
+        <li>
+          {item[item.type].rich_text.map((entry) => {
+            if (entry.href) {
+              return (
+                <a href={entry.href} title={entry.plain_text}>
+                  {entry.plain_text}
+                </a>
+              );
+            }
+            if (entry.annotations.code) {
+              return <InlineCode>{entry.plain_text}</InlineCode>;
+            }
+            return <span>{entry.plain_text}</span>;
+          })}
+        </li>
+      );
     })
   }
 </ul>
