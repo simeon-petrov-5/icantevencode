@@ -31,6 +31,8 @@
     "cssnano-preset-advanced": "^5.3.9",
     "node-fetch": "^3.3.0",
     "sass": "^1.58.0",
+    "satori": "^0.7.2",
+    "satori-html": "^0.3.2",
     "unsplash-js": "^7.0.15",
     "vue": "^3.2.47"
   }

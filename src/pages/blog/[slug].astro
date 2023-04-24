@@ -23,7 +23,7 @@ const article = Astro.props.article as ArticleDetails;
 const blocks = await fetchBlocks(article.id);
 ---
 
-<Blogpostlayout title={article.title}>
+<Blogpostlayout title={article.title} description={article.excerpt} slug={article.slug}>
   <ArticleHeader data={article} />
   <BlocksRenderer className="blogpost" title={article.title} items={blocks} />
 </Blogpostlayout>

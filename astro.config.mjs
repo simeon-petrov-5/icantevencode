@@ -16,5 +16,12 @@ export default defineConfig({
   integrations: [vue(), sitemap(), compress({
     css: false,
     html: false
-  }), critters(), image(), partytown()]
+  }), critters(), image(), partytown()],
+  vite:{
+    build: {
+      rollupOptions: {
+        external: ['@resvg/resvg-js'],
+      }
+    }
+  }
 });
