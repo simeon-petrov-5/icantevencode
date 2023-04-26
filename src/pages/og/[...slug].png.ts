@@ -2,6 +2,10 @@ import type { APIContext } from "astro";
 import satori from "satori";
 import { html } from "satori-html";
 import { fetchArticles } from "src/utils/notion";
+import { Resvg } from '@resvg/resvg-js';
+
+// Astro Endpoints / API route
+// https://docs.astro.build/en/core-concepts/endpoints/
 
 const articles = await fetchArticles();
 
@@ -10,6 +14,7 @@ export async function get({ props }: APIContext) {
     "https://fonts.cdnfonts.com/s/19795/Inter-Regular.woff"
   ).then((res) => res.arrayBuffer());
 
+  // JSX design
   const markup = html`<div
     style="
     box-sizing: border-box;
@@ -33,8 +38,8 @@ export async function get({ props }: APIContext) {
       justify-content: center;
       padding: 32px 48px;
       background-image: url(${props.cover});
-      background-position: center center;
-      background-size: cover;
+      background-position: center;
+      background-size: 100% 100%;
     "
     >
       <div
@@ -47,7 +52,7 @@ export async function get({ props }: APIContext) {
         right: 0px;
         bottom: 0px;
         background-color: #111827;
-        opacity: 0.6;
+        opacity: 0.4;
       "
       ></div>
       <div
@@ -57,6 +62,8 @@ export async function get({ props }: APIContext) {
         font-size: 62px;
         font-weight: bold;
         color: #fff;
+        text-shadow: 0px 0px 3px #000;
+        font-weight: bold;
       "
       >
         ${props.title}
@@ -100,6 +107,7 @@ export async function get({ props }: APIContext) {
     </div>
   </div>`;
 
+  // Generate SVG
   const svg = await satori(markup, {
     width: 1200,
     height: 768,
@@ -111,21 +119,17 @@ export async function get({ props }: APIContext) {
     ],
   });
 
-  // ERR -> The specified procedure could not be found.
-  // const sharpSvg = Buffer.from(svg);
-  // const buffer = await sharp(sharpSvg).toBuffer();
-
-  // ERR -> No loader is configured for ".node" files
-  // const resvg = new Resvg(svg)
-  // const pngData = resvg.render()
-  // const buffer = pngData.asPng()
+  // Generate PNG
+  const resvg = new Resvg(svg)
+  const pngData = resvg.render()
+  const buffer = pngData.asPng()
 
   return {
-    body: svg,
-    // encoding: "binary",
-    // headers: {
-    //   "Content-Type": "image/png",
-    // },
+    body: buffer,
+    encoding: "binary",
+    headers: {
+      "Content-Type": "image/png",
+    },
   };
 }
 
