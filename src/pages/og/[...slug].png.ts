@@ -38,8 +38,8 @@ export async function get({ props }: APIContext) {
       justify-content: center;
       padding: 32px 48px;
       background-image: url(${props.cover});
-      background-position: center center;
-      background-size: cover;
+      background-position: center;
+      background-size: 100% 100%;
     "
     >
       <div
@@ -52,7 +52,7 @@ export async function get({ props }: APIContext) {
         right: 0px;
         bottom: 0px;
         background-color: #111827;
-        opacity: 0.6;
+        opacity: 0.4;
       "
       ></div>
       <div
@@ -62,6 +62,8 @@ export async function get({ props }: APIContext) {
         font-size: 62px;
         font-weight: bold;
         color: #fff;
+        text-shadow: 0px 0px 3px #000;
+        font-weight: bold;
       "
       >
         ${props.title}
