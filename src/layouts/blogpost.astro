@@ -24,15 +24,14 @@ const { title, slug, description } = Astro.props;
 <!-- Open Graph / Facebook -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`/og/blog/${slug}.svg`} />
+<meta property="og:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
 
 <!-- Twitter -->
-<!-- WIP - transform SVG to PNG -->
-<!-- <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@jfrAziz" />
-<meta name="twitter:image" content="{ogImage}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@icantevencode" />
+<meta name="twitter:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
 <meta property="twitter:title" content={title} />
-<meta property="twitter:description" content="description...." /> -->
+<meta property="twitter:description" content={description} />
 
 <script
   async

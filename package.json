@@ -21,6 +21,7 @@
     "@astrojs/vue": "^2.1.1",
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@notionhq/client": "^2.2.4",
+    "@resvg/resvg-js": "^2.4.1",
     "@vueuse/core": "^10.1.0",
     "alpha-grid": "^1.5.0",
     "aos": "^2.3.4",
