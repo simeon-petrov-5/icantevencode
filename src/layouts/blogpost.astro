@@ -25,6 +25,8 @@ const { title, slug, description } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
+<meta property="og:type" content="article" />
+<meta property="og:url" content={`https://icantevencode.com/blog/${slug}`}>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />

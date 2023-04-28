@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
@@ -12,16 +12,21 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://icantevencode.com',
-  integrations: [vue(), sitemap(), compress({
-    css: false,
-    html: false
-  }), critters(), image(), partytown()],
-  vite:{
-    build: {
-      rollupOptions: {
-        external: ['@resvg/resvg-js'],
-      }
-    }
-  }
+  site: "https://icantevencode.com",
+  integrations: [
+    vue(),
+    sitemap(),
+    compress({
+      css: false,
+      html: false,
+    }),
+    critters(),
+    image(),
+    partytown(),
+  ],
+  vite: {
+    optimizeDeps: {
+      exclude: ['@resvg/resvg-js'],
+    },
+  },
 });

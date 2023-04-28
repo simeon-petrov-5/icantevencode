@@ -4,15 +4,13 @@ This project is my personal website [icantevencode.com](https://icantevencode.co
 ## Features
 - 🚀 Astro
 - 💚 Vue 3
-- 📜 SSG
 - 🎨 SASS
 - 🧹 PostCSS - PurgeCSS + cssnano
-- 🌩️ Netlify + Netlify Forms
 - 🦔 Critical CSS (astro-critters)
+- More details here: [Over Engineer It.](https://icantevencode.com/over-engineer-it)
 
 ## 📝 More stuff to check
 - [ ] Blog: Add tags and sort in the blog page
-- [ ] Add analytics like https://splitbee.io/docs/javascript-library
 - [ ] Add cookies module & page
 
 

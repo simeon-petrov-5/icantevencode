@@ -1,0 +1,275 @@
+---
+import { Image } from "@astrojs/image/components";
+import Layout from "../layouts/layout.astro";
+import astroLogo from "../assets/imgs/astro-logo.png";
+import sassLogo from "../assets/imgs/sass-logo.png";
+import vueLogo from "../assets/imgs/vue-logo.png";
+
+/**
+ * Can generate this via Notion too, but there's a lot more work, to connect the nested ul
+ * This can be achieved through the children API and a lot of remapping
+ * https://developers.notion.com/reference/get-block-children
+
+  const overengineerId = import.meta.env.NOTION_ID_OVERENGINEER;
+  const blocks = await fetchBlocks(overengineerId);
+  <section class="ds__section--sm content">
+    <BlocksRenderer items={blocks} />
+  </section>
+ */
+---
+
+<Layout title="Overengineering" description="Just have fun">
+  <section class="ds__section--sm hero">
+    <h1 class="ds__title--xl">Over engineer it.</h1>
+
+    <div class="galaxyCollector">
+      <div class="galaxy">
+        <div class="orbit">
+          <div class="planet">
+            <Image
+              class="img"
+              src={astroLogo}
+              format="webp"
+              alt="Simeon photo"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="galaxy">
+        <div class="orbit">
+          <div class="planet vue">
+            <Image class="img" src={vueLogo} format="webp" alt="Simeon photo" />
+          </div>
+        </div>
+      </div>
+      <div class="galaxy">
+        <div class="orbit">
+          <div class="planet">
+            <Image
+              class="img"
+              src={sassLogo}
+              format="webp"
+              alt="Simeon photo"
+            />
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ds__title prompt">And have some fun</h2>
+    </div>
+    <p class="ds__title--sm comment">And yes, this is pretty unresponsive</p>
+  </section>
+
+  <section class="ds__section--sm">
+    <h2 class="ds__title--lg">Frankenstein's current setup</h2>
+
+    <ul>
+      <li class="ds__text">🚀 Astro + 📜 SSG</li>
+      <li class="ds__text">💚 Vue 3</li>
+      <li class="ds__text">🎨 SASS & design tokens</li>
+      <li class="ds__text">🧹 PostCSS - PurgeCSS + cssnano</li>
+      <li class="ds__text">🌩️ Netlify + Netlify Forms</li>
+      <li class="ds__text">
+        🎉 lazy load third-party scripts ( <a
+          href="https://github.com/BuilderIO/partytown"
+          target="_blank">Partytown</a
+        > )
+      </li>
+      <li class="ds__text">🦥 Lazy loading everything possible</li>
+      <li class="ds__text">
+        👀 Simple, fast, privacy-focused Analytics ( <a
+          href="https://github.com/umami-software/umami"
+          target="_blank">Umami</a
+        > )
+      </li>
+      <li class="ds__text">
+        🦔 Critical CSS ( <a
+          href="https://github.com/astro-community/astro-critters"
+          target="_blank">astro-critters</a
+        > )
+      </li>
+      <li class="ds__text">
+        🗜️ Compressed files ( <a
+          href="https://github.com/astro-community/astro-compress"
+          target="_blank">astro-compress</a
+        > )
+        <ul>
+          <li>Smush everything that's not HTML or CSS</li>
+        </ul>
+      </li>
+      <li class="ds__text">🍳 Easter eggs</li>
+      <li class="ds__text">
+        🖼️ Open-Graph image generation for blogposts
+        <ul>
+          <li>
+            <a href="https://github.com/vercel/satori" target="_blank">Satori</a
+            > - generate SVG from HTML
+          </li>
+          <li>
+            <a href="https://github.com/yisibl/resvg-js" target="_blank"
+              >@resvg/resvg-js</a
+            > - transform from SVG to PNG (Rust baby 🦀)
+          </li>
+        </ul>
+      </li>
+      <li class="ds__text">
+        📋 Comments ( <a href="https://github.com/giscus/giscus" target="_blank"
+          >giscus</a
+        > )
+
+        <ul>
+          <li>All data is stored in GitHub Discussions</li>
+          <li>
+            Originally wanted to go with <a
+              href="https://github.com/utterance/utterances"
+              target="_blank">utterances</a
+            >, but I prefered discussions over issues in GitHub
+          </li>
+        </ul>
+      </li>
+      <li class="ds__text">
+        ✍️ Notion as CMS
+
+        <ul>
+          <li>Posts API with tags and status</li>
+          <li>Custom .astro components for almost all blocks</li>
+          <li>Code snippets with Shiki</li>
+          <li>Thumbnail images from unsplash</li>
+          <li>
+            Images are saved locally at build time via <a
+              href="https://docs.astro.build/en/guides/integrations-guide/image/"
+              target="_blank">@astrojs/image</a
+            >. The links are from S3 Bucket and are consistently changing,
+            making the completely useless for a blog.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</Layout>
+
+<script src="../assets/js/aos.js" />
+
+<style scoped lang="scss">
+  @keyframes orbit-spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes planet-spin {
+    100% {
+      transform: translateX(-50%) rotate(-360deg);
+    }
+  }
+
+  .hero {
+    .ds__title--xl {
+      text-align: center;
+    }
+
+    .galaxyCollector {
+      --wrapper-size: 24rem;
+      position: relative;
+      max-width: var(--wrapper-size);
+      aspect-ratio: 1/1;
+      margin: 3rem auto 0;
+      overflow: hidden;
+
+      .galaxy {
+        &:nth-child(1) {
+          --size: calc(var(--wrapper-size) - 2rem);
+          --speed: 20s;
+        }
+        &.galaxy:nth-child(2) {
+          --size: calc(var(--wrapper-size) - 5rem);
+          --speed: 12s;
+        }
+        &.galaxy:nth-child(3) {
+          --size: calc(var(--wrapper-size) - 9rem);
+          --speed: 7s;
+        }
+      }
+
+      .prompt {
+        font-size: 1.875rem;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-image: linear-gradient(
+          to right,
+          var(--lime-6),
+          var(--orange-4)
+        );
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(var(--wrapper-size) - 11rem);
+        text-align: center;
+        z-index: -1;
+        margin: 0;
+      }
+    }
+
+    .comment {
+      text-align: center;
+      text-transform: lowercase;
+    }
+
+    .galaxy {
+      --galaxy-size: var(--size, 400px);
+      --animation-speed: var(--speed, 10s);
+      --init-rotation: var(--rotation, 0deg);
+      --planet-size: calc(var(--galaxy-size) / 7);
+      --planet-position: calc(var(--planet-size) / -2);
+
+      width: var(--galaxy-size);
+      aspect-ratio: 1/1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .orbit {
+        height: 100%;
+        border-radius: 100%;
+        border: 2px solid var(--clr-primary);
+        position: relative;
+        transform: rotate(var(--init-rotation));
+        animation: orbit-spin var(--animation-speed) linear infinite;
+
+        .planet {
+          width: var(--planet-size);
+          aspect-ratio: 1/1;
+          border-radius: 100%;
+
+          position: absolute;
+          top: var(--planet-position);
+          left: 50%;
+          transform: translateX(-50%);
+          overflow: hidden;
+
+          animation: planet-spin var(--animation-speed) linear infinite;
+
+          .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          &.vue {
+            background-color: var(--dark-9);
+            .img {
+              transform: scale(0.8);
+            }
+          }
+        }
+      }
+    }
+
+    .content {
+      margin: 0 auto;
+    }
+  }
+</style>
