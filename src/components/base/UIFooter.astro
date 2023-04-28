@@ -1,0 +1,59 @@
+---
+import youtubeIcon from "../../assets/imgs/youtube-logo.svg";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <span class="copyright">© {year}</span>
+
+  <ul class="socials" role="list">
+    <li class="item">
+      <a
+        class="link ds__link--clean"
+        href="https://www.youtube.com/channel/UCPG8KezVTaixto9CgtyB5dg"
+        target="__blank"
+      >
+        <img src="/youtube-logo.svg" alt="youtube" />
+      </a>
+    </li>
+    <li class="item">
+      <a
+        class="link ds__link--clean"
+        href="https://www.twitch.tv/icantevencode"
+        target="__blank"
+      >
+        <img src="/twitch-logo.svg" alt="twitch" />
+      </a>
+    </li>
+    <li class="item">
+      <a
+        class="link ds__link--clean"
+        href="https://www.linkedin.com/in/simeonpetrov5/"
+        target="__blank"
+      >
+        <img src="/linkedin-logo.svg" alt="linkedin" />
+      </a>
+    </li>
+  </ul>
+</footer>
+
+<style lang="scss" scoped>
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    font-size: 1rem;
+    color: var(--clr-primary);
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      img {
+        width: 1.5rem;
+        color: var(--clr-primary);
+      }
+    }
+  }
+</style>

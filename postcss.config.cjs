@@ -11,12 +11,6 @@ const aosWhitelist = [
   "data-aos-duration",
   "fade-up",
   "fade-left",
-  "agrid",
-  "acol-12",
-  "agrid-1", 
-  "agrid-2", 
-  "md:agrid-3",
-  /^sm:acol-/,
   /^:where/,
 ];
 

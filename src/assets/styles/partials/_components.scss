@@ -25,24 +25,3 @@ a:not(.ds__link--clean) {
     }
   }
 }
-
-// Blogpost Thumbnail
-
-.ds__blogpost-thumbnail {
-  border-radius: 0.5rem;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: var(--shadow-md);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-
-  &__img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-}

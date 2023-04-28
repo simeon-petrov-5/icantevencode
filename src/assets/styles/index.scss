@@ -2,13 +2,15 @@
 
 @use "./partials/tokens";
 @use "./partials/typography";
-@use "./partials/utillity";
+@use "./partials/layout";
 @use "./partials/components";
 @use "./partials/animations";
-
-@use "alpha-grid/dist/scss/agrid.scss";
 
 :root {
   background-color: var(--clr-page);
   scroll-behavior: smooth;
+}
+
+main{
+  min-height: calc(100vh - 72px);
 }

@@ -4,6 +4,7 @@ import Hero from "@components/sections/Hero.astro";
 import About from "@components/sections/About.astro";
 import TechStack from "@components/sections/TechStack.astro";
 import CurrentWork from "@components/sections/CurrentWork.vue";
+import Contacts from "@components/base/Contacts.vue";
 ---
 
 <script src="../assets/js/aos.js" />
@@ -13,4 +14,5 @@ import CurrentWork from "@components/sections/CurrentWork.vue";
   <About />
   <TechStack />
   <CurrentWork client:idle />
+  <Contacts client:visible />
 </Layout>

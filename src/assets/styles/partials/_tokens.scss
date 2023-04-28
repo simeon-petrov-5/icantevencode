@@ -1,17 +1,9 @@
 @use "colors";
 
 :root {
-  --dark-1: #2a414f;
-  --dark-2: #263a46;
-  --dark-3: #21323e;
-  --dark-4: #1c2b35;
-  --dark-5: #18242c;
-  --dark-6: #131d23;
-  --dark-7: #0e161a;
-  --dark-8: #090e12;
-  --dark-9: #050709;
+  /* --- Theme ---*/
+  --clr-page: var(--dark-7);
 
-  /* --- Primary ---*/
   --clr-primary: var(--lime-4);
 
   --clr-primary-l1: var(--lime-3);
@@ -25,7 +17,6 @@
   --clr-primary-d4: var(--lime-8);
 
   /* --- Utils --- */
-  --clr-page: var(--dark-7);
   --clr-danger: #cc7c6a;
   --clr-warn: #5e98ba;
   --clr-info: #efe583;

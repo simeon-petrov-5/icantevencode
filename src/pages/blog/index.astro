@@ -1,8 +1,8 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import Layout from "../../layouts/layout.astro";
 import { fetchArticles } from "src/utils/notion";
 import Tags from "@components/blog/Tags.astro";
+import BlogThumbnail from "@components/blog/BlogThumbnail.astro";
 
 const articles = await fetchArticles();
 ---
@@ -18,16 +18,7 @@ const articles = await fetchArticles();
             <article class="post">
               <a class="ds__link--clean" href={`/blog/${article.slug}`}>
                 <div class="ds__blogpost-thumbnail">
-                  <Picture
-                    class="ds__blogpost-thumbnail__img"
-                    src={article.cover}
-                    alt={article.slug}
-                    format="webp"
-                    widths={[360, 450, 600]}
-                    aspectRatio={16 / 9}
-                    sizes="(max-width: 600px) 100vw, 600px"
-                    quality={90}
-                  />
+                  <BlogThumbnail src={article.cover} alt={article.slug} />
                 </div>
               </a>
 

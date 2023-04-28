@@ -2,8 +2,8 @@
 import "../assets/styles/index.scss";
 import "aos/dist/aos.css";
 
-import UIHeader from "@components/UIHeader.astro";
-import UIFooter from "@components/UIFooter.vue";
+import UIHeader from "@components/base/UIHeader.astro";
+import UIFooter from "@components/base/UIFooter.astro";
 
 export interface Props {
   title: string;
@@ -39,6 +39,5 @@ const { title, description } = Astro.props;
   <main>
     <slot />
   </main>
-
-  <UIFooter client:visible />
+  <UIFooter />
 </body>

@@ -1,7 +1,7 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import type { ArticleDetails } from "src/utils/notion";
 import Tags from "./Tags.astro";
+import BlogThumbnail from "./BlogThumbnail.astro";
 // import getUnsplashData from "src/utils/unsplash";
 // const imgData = await getUnsplashData(frontmatter);
 
@@ -23,18 +23,7 @@ const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
     by Simeon Petrov
   </p>
 
-  <div class="ds__blogpost-thumbnail">
-    <Picture
-      class="ds__blogpost-thumbnail__img"
-      src={data.cover}
-      alt={`Thumbnail for ${data.title}`}
-      format="webp"
-      widths={[360, 450, 600]}
-      aspectRatio={16 / 9}
-      sizes="(max-width: 600px) 100vw, 600px"
-      quality={90}
-    />
-  </div>
+  <BlogThumbnail src={data.cover} alt={`Thumbnail for ${data.title}`} />
 
   <Tags items={data.tags} />
 

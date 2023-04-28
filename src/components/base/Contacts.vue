@@ -60,7 +60,10 @@ const onSubmit = () => {
     <div style="overflow: hidden">
       <p class="ds__text socials" data-aos="fade-left" data-aos-delay="300">
         Find me on
-        <a href="https://www.youtube.com/channel/UCPG8KezVTaixto9CgtyB5dg" target="__blank">
+        <a
+          href="https://www.youtube.com/channel/UCPG8KezVTaixto9CgtyB5dg"
+          target="__blank"
+        >
           YouTube
         </a>
         <a href="https://www.twitch.tv/icantevencode" target="__blank">
@@ -73,7 +76,7 @@ const onSubmit = () => {
     </div>
 
     <form
-      class="form agrid"
+      class="form"
       name="ask-question"
       method="post"
       netlify-honeypot="honey-field"
@@ -86,7 +89,7 @@ const onSubmit = () => {
     >
       <input type="hidden" name="form-name" value="ask-question" />
 
-      <div class="name acol-12 sm:acol-5">
+      <div class="name">
         <input
           id="name"
           type="text"
@@ -101,7 +104,13 @@ const onSubmit = () => {
         </transition>
 
         <p
-          style="visibility: hidden; height: 0px; width: 0px; overflow: hidden"
+          style="
+            visibility: hidden;
+            height: 0px;
+            width: 0px;
+            overflow: hidden;
+            padding: 0;
+          "
         >
           <label>
             Don't fill this out if you're human: <input name="honey-field" />
@@ -109,7 +118,7 @@ const onSubmit = () => {
         </p>
       </div>
 
-      <div class="email acol-12 sm:acol-7">
+      <div class="email">
         <input
           id="email"
           type="email"
@@ -124,7 +133,7 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <div class="message acol-12">
+      <div class="message">
         <textarea
           id="message"
           rows="10"
@@ -141,7 +150,7 @@ const onSubmit = () => {
         </transition>
       </div>
 
-      <button type="submit" class="btn acol-12 sm:acol-4">Send</button>
+      <button type="submit" class="btn">Send</button>
     </form>
   </section>
 </template>
@@ -154,10 +163,10 @@ const onSubmit = () => {
     text-align: right;
   }
 
-  .socials{
+  .socials {
     display: flex;
     justify-content: flex-end;
-    gap: .5rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
   }
   .form {
@@ -223,6 +232,25 @@ const onSubmit = () => {
       &:hover {
         background-color: var(--clr-primary-d2);
         color: var(--dark-9);
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(50px, 1fr));
+      gap: 1rem;
+
+      .name {
+        grid-column: auto / span 5;
+      }
+      .email {
+        grid-column: auto / span 7;
+      }
+      .message {
+        grid-column: auto / span 12;
+      }
+      .btn {
+        grid-column: auto / span 4;
       }
     }
   }
