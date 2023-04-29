@@ -2,7 +2,7 @@
 import Blogpostlayout from "src/layouts/blogpost.astro";
 import { ArticleDetails, fetchBlocks, fetchArticles } from "src/utils/notion";
 import BlocksRenderer from "@components/blog/BlocksRenderer.astro";
-import ArticleHeader from "@components/blog/ArticleHeader.astro";
+import BlogleHeader from "@components/blog/BlogHeader.astro";
 
 export async function getStaticPaths() {
   // const articles = await Astro.glob("../../articles/*.md");
@@ -24,7 +24,7 @@ const blocks = await fetchBlocks(article.id);
 ---
 
 <Blogpostlayout title={article.title} description={article.excerpt} slug={article.slug}>
-  <ArticleHeader data={article} />
+  <BlogleHeader data={article} />
   <BlocksRenderer title={article.title} items={blocks} />
 </Blogpostlayout>
 

@@ -148,9 +148,10 @@ import vueLogo from "../assets/imgs/vue-logo.png";
   </section>
 </Layout>
 
-<script src="../assets/js/aos.js" />
+<script src="../assets/js/aos.js"></script>
 
 <style scoped lang="scss">
+  @use "../assets/styles/design-tokens/base-colors";
   @keyframes orbit-spin {
     100% {
       transform: rotate(360deg);
@@ -195,11 +196,7 @@ import vueLogo from "../assets/imgs/vue-logo.png";
         font-size: 1.875rem;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        background-image: linear-gradient(
-          to right,
-          var(--lime-6),
-          var(--orange-4)
-        );
+        background-image: var(--clr-gradient-main);
 
         position: absolute;
         top: 50%;
@@ -259,7 +256,7 @@ import vueLogo from "../assets/imgs/vue-logo.png";
           }
 
           &.vue {
-            background-color: var(--dark-9);
+            background-color: base-colors.$dark-9;
             .img {
               transform: scale(0.8);
             }

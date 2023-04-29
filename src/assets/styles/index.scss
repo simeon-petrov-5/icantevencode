@@ -1,13 +1,14 @@
 @use "./reset";
 
-@use "./partials/tokens";
+@forward "./design-tokens/index";
+
 @use "./partials/typography";
 @use "./partials/layout";
 @use "./partials/components";
 @use "./partials/animations";
 
 :root {
-  background-color: var(--clr-page);
+  background-color: var(--clr-page-bg);
   scroll-behavior: smooth;
 }
 
