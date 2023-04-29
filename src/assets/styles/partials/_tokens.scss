@@ -2,28 +2,28 @@
 
 :root {
   /* --- Theme ---*/
-  --clr-page: var(--dark-7);
+  --clr-page: colors.$red;
 
-  --clr-primary: var(--lime-4);
+  --clr-primary: colors.$lime-4;
 
-  --clr-primary-l1: var(--lime-3);
-  --clr-primary-l2: var(--lime-2);
-  --clr-primary-l3: var(--lime-1);
-  --clr-primary-l4: var(--lime-0);
+  --clr-primary-l1: colors.$lime-3;
+  --clr-primary-l2: colors.$lime-2;
+  --clr-primary-l3: colors.$lime-1;
+  --clr-primary-l4: colors.$lime-0;
 
-  --clr-primary-d1: var(--lime-5);
-  --clr-primary-d2: var(--lime-6);
-  --clr-primary-d3: var(--lime-7);
-  --clr-primary-d4: var(--lime-8);
+  --clr-primary-d1: colors.$lime-5;
+  --clr-primary-d2: colors.$lime-6;
+  --clr-primary-d3: colors.$lime-7;
+  --clr-primary-d4: colors.$lime-8;
 
   /* --- Utils --- */
   --clr-danger: #cc7c6a;
   --clr-warn: #5e98ba;
   --clr-info: #efe583;
   --clr-black: #002d18;
-  --clr-white: var(--gray-1);
-  --clr-text: var(--gray-1);
-  --clr-label: var(--gray-4);
+  --clr-white: colors.$gray-1;
+  --clr-text: colors.$gray-1;
+  --clr-label: colors.$gray-4;
 
   /* --- Shadows --- */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
