@@ -64,3 +64,56 @@
     // --clr-warn: #5e98ba};
     // --clr-info: #efe583};
 }
+
+html[data-theme="light"] {
+    /* --- Page ---*/
+    --clr-page-bg: #{base-colors.$gray-1};
+    --clr-page-bg-inverse: #{base-colors.$dark-9};
+
+    /* --- Core ---*/
+    --clr-primary: #{base-colors.$lime-6};
+
+    --clr-primary-l1: #{base-colors.$lime-5};
+    --clr-primary-l2: #{base-colors.$lime-4};
+    --clr-primary-l3: #{base-colors.$lime-3};
+    --clr-primary-l4: #{base-colors.$lime-2};
+
+    --clr-primary-d1: #{base-colors.$lime-7};
+    --clr-primary-d2: #{base-colors.$lime-8};
+    --clr-primary-d3: #{base-colors.$lime-9};
+    --clr-primary-d4: #{base-colors.$lime-10};
+
+    /* --- Text ---*/
+    --clr-heading-1: #{base-colors.$lime-7};
+    --clr-heading-2: #{base-colors.$lime-6};
+    --clr-heading-3: #{base-colors.$lime-6};
+    --clr-heading-4: #{base-colors.$lime-6};
+
+    --clr-title: #{base-colors.$lime-7};
+    --clr-text: #{base-colors.$gray-8};
+    --clr-text-light: #{base-colors.$dark-9};
+    --clr-text-dark: #{base-colors.$gray-1};
+    --clr-text-accent: #{base-colors.$lime-6};
+
+
+
+    /* --- Link ---*/
+    --clr-link-text: #{base-colors.$lime-10};
+    --clr-link-hover-text: #{base-colors.$dark-9};
+    --clr-link-hover-bg: #{base-colors.$lime-10};
+
+    /* --- Form ---*/
+    --clr-form-label: var(--clr-text-light);
+    --clr-form-element-bg: var(--clr-page-bg);
+    --clr-form-element-border: var(--clr-primary-d2);
+    --clr-form-text: var(--clr-text);
+    --clr-form-btn-text: var(--clr-primary-d2);
+    --clr-form-btn-hover-text: var(--clr-text-dark);
+    --clr-form-btn-hover-bg: var(--clr-form-btn-text);
+
+    /* --- Blogpost ---*/
+    --clr-blogpost-text: var(--clr-text-light);
+    --clr-blogpost-accent: var(--clr-primary-d2);
+    --clr-blogpost-table: var(--clr-primary-d3);
+    --clr-blogpost-table-bg: var(--clr-primary-l3);
+}

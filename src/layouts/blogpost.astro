@@ -12,6 +12,11 @@ export interface Props {
 const { title, slug, description } = Astro.props;
 ---
 
+<script>
+  const theme = localStorage.getItem("data-theme") || "";
+  document.documentElement.setAttribute("data-theme", theme);
+</script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -24,24 +29,22 @@ const { title, slug, description } = Astro.props;
 <!-- Open Graph / Facebook -->
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
+<meta
+  property="og:image"
+  content={`https://icantevencode.com/og/blog/${slug}.png`}
+/>
 <meta property="og:type" content="article" />
-<meta property="og:url" content={`https://icantevencode.com/blog/${slug}`}>
+<meta property="og:url" content={`https://icantevencode.com/blog/${slug}`} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@icantevencode" />
-<meta name="twitter:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
+<meta
+  name="twitter:image"
+  content={`https://icantevencode.com/og/blog/${slug}.png`}
+/>
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-
-<script
-  async
-  defer
-  type="text/partytown"
-  data-website-id="9afa6024-4623-47a9-83a0-daf557f5b692"
-  src="https://icant-umami.netlify.app/umami.js"
-></script>
 
 <body>
   <UIHeader />
@@ -72,3 +75,11 @@ const { title, slug, description } = Astro.props;
 
   <UIFooter />
 </body>
+
+<script
+  async
+  defer
+  type="text/partytown"
+  data-website-id="9afa6024-4623-47a9-83a0-daf557f5b692"
+  src="https://icant-umami.netlify.app/umami.js"
+></script>

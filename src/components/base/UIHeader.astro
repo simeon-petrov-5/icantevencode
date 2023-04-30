@@ -1,3 +1,7 @@
+---
+import ThemeToggle from "./ThemeToggle.vue";
+---
+
 <header class="header">
   <nav class="nav">
     <ul class="nav-list" role="list">
@@ -10,26 +14,31 @@
       <li class="nav-item">
         <a class="ds__link--clean" href="/#contacts-title">Contacts</a>
       </li>
+      <li class="nav-item">
+        <ThemeToggle client:load/>
+      </li>
     </ul>
   </nav>
 </header>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .header {
     position: fixed;
     top: 0px;
     left: 0px;
     background-color: var(--clr-page-bg);
     width: 100%;
-    padding: 0.5rem 2rem;
+    padding: 0.75rem 2rem;
     z-index: 100;
 
     .nav-list {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 2rem;
       .nav-item {
         font-size: 1.25rem;
+        line-height: 1;
         a {
           text-decoration: none;
           color: var(--clr-primary);

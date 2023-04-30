@@ -8,10 +8,13 @@
 @use "./partials/animations";
 
 :root {
-  background-color: var(--clr-page-bg);
   scroll-behavior: smooth;
 }
 
-main{
+body {
+  background-color: var(--clr-page-bg);
+}
+
+main {
   min-height: calc(100vh - 72px);
 }
