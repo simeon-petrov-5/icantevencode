@@ -16,7 +16,7 @@ interface Props {
   title?: string;
   className?: string;
 }
-const { items, title = "", className } = Astro.props as Props;
+const { items, title = "", className = "" } = Astro.props as Props;
 
 const groupedData: any[] = [];
 let prevType = "";
@@ -68,15 +68,11 @@ items.forEach((item) => {
   }
 </div>
 
-<style lang="scss">
+<style lang="scss" is:global>
+  /* purgecss start ignore */
   .blockRenderer {
     color: var(--clr-blogpost-text);
     font-size: 1.25rem;
-
-    .astro-code {
-      padding: 1rem 1.25rem;
-      font-size: 1rem;
-    }
 
     hr {
       color: var(--clr-blogpost-accent);
@@ -164,11 +160,11 @@ items.forEach((item) => {
     table thead {
       background-color: var(--clr-blogpost-table);
     }
-
     img {
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
   }
+  /* purgecss end ignore */
 </style>

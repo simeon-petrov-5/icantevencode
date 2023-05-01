@@ -50,6 +50,10 @@
     --clr-blogpost-table: var(--clr-primary-d3);
     --clr-blogpost-table-bg: var(--clr-primary-l3);
 
+    /* --- Inline code ---*/
+    --clr-inlCode-text: var(--clr-primary);
+    --clr-inlCode-bg: #{base-colors.$dark-2};
+
     /* --- Gradients ---*/
     --clr-gradient-main: linear-gradient(to right,
         #{base-colors.$lime-6},
@@ -90,30 +94,24 @@ html[data-theme="light"] {
     --clr-heading-4: #{base-colors.$lime-6};
 
     --clr-title: #{base-colors.$lime-7};
-    --clr-text: #{base-colors.$gray-8};
+    --clr-text: #{base-colors.$gray-9};
     --clr-text-light: #{base-colors.$dark-9};
     --clr-text-dark: #{base-colors.$gray-1};
     --clr-text-accent: #{base-colors.$lime-6};
-
-
 
     /* --- Link ---*/
     --clr-link-text: #{base-colors.$lime-10};
     --clr-link-hover-text: #{base-colors.$dark-9};
     --clr-link-hover-bg: #{base-colors.$lime-10};
 
-    /* --- Form ---*/
-    --clr-form-label: var(--clr-text-light);
-    --clr-form-element-bg: var(--clr-page-bg);
-    --clr-form-element-border: var(--clr-primary-d2);
-    --clr-form-text: var(--clr-text);
-    --clr-form-btn-text: var(--clr-primary-d2);
-    --clr-form-btn-hover-text: var(--clr-text-dark);
-    --clr-form-btn-hover-bg: var(--clr-form-btn-text);
 
     /* --- Blogpost ---*/
     --clr-blogpost-text: var(--clr-text-light);
-    --clr-blogpost-accent: var(--clr-primary-d2);
+    --clr-blogpost-accent: var(--clr-primary-d3);
     --clr-blogpost-table: var(--clr-primary-d3);
-    --clr-blogpost-table-bg: var(--clr-primary-l3);
+    --clr-blogpost-table-bg: #{base-colors.$gray-2};
+
+    /* --- Inline code ---*/
+    --clr-inlCode-text: var(--clr-primary);
+    --clr-inlCode-bg: #{base-colors.$gray-8};
 }
