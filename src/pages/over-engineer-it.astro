@@ -63,32 +63,46 @@ import "aos/dist/aos.css";
   <section class="ds__section--sm">
     <h2 class="ds__title--lg">Frankenstein's current setup</h2>
 
-    <ul>
-      <li class="ds__text">🚀 Astro + 📜 SSG</li>
-      <li class="ds__text">💚 Vue 3</li>
-      <li class="ds__text">🎨 SASS & design tokens</li>
-      <li class="ds__text">🧹 PostCSS - PurgeCSS + cssnano</li>
-      <li class="ds__text">🌩️ Netlify + Netlify Forms</li>
-      <li class="ds__text">
+    <ul class="ds__text">
+      <li class="">🚀 Astro + 📜 SSG</li>
+      <li>💚 Vue 3</li>
+      <li>
+        🎨 SASS & design tokens
+        <ul>
+          <li>Base and context tokens</li>
+          <li>
+            Dark & Light theme, althought the light mode isn't the best thing
+            ever
+          </li>
+          <li>
+            SASS modules (@use) & variables for namescoping and limiting the use
+            of base colors
+          </li>
+          <li>CSS Variables for easy theme implementation</li>
+        </ul>
+      </li>
+      <li>🧹 PostCSS - PurgeCSS + cssnano</li>
+      <li>🌩️ Netlify + Netlify Forms</li>
+      <li>
         🎉 lazy load third-party scripts ( <a
           href="https://github.com/BuilderIO/partytown"
           target="_blank">Partytown</a
         > )
       </li>
-      <li class="ds__text">🦥 Lazy loading everything possible</li>
-      <li class="ds__text">
+      <li>🦥 Lazy loading everything possible</li>
+      <li>
         👀 Simple, fast, privacy-focused Analytics ( <a
           href="https://github.com/umami-software/umami"
           target="_blank">Umami</a
         > )
       </li>
-      <li class="ds__text">
+      <li>
         🦔 Critical CSS ( <a
           href="https://github.com/astro-community/astro-critters"
           target="_blank">astro-critters</a
         > )
       </li>
-      <li class="ds__text">
+      <li>
         🗜️ Compressed files ( <a
           href="https://github.com/astro-community/astro-compress"
           target="_blank">astro-compress</a
@@ -97,8 +111,8 @@ import "aos/dist/aos.css";
           <li>Smush everything that's not HTML or CSS</li>
         </ul>
       </li>
-      <li class="ds__text">🍳 Easter eggs</li>
-      <li class="ds__text">
+      <li>🍳 Easter eggs</li>
+      <li>
         🖼️ Open-Graph image generation for blogposts
         <ul>
           <li>
@@ -112,7 +126,7 @@ import "aos/dist/aos.css";
           </li>
         </ul>
       </li>
-      <li class="ds__text">
+      <li>
         📋 Comments ( <a href="https://github.com/giscus/giscus" target="_blank"
           >giscus</a
         > )
@@ -127,7 +141,7 @@ import "aos/dist/aos.css";
           </li>
         </ul>
       </li>
-      <li class="ds__text">
+      <li>
         ✍️ Notion as CMS
 
         <ul>
