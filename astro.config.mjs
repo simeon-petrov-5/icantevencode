@@ -24,9 +24,12 @@ export default defineConfig({
     image(),
     partytown(),
   ],
+  compilerOptions: {
+    baseUrl: ".",
+  },
   vite: {
     optimizeDeps: {
-      exclude: ['@resvg/resvg-js'],
+      exclude: ["@resvg/resvg-js"],
     },
   },
 });
