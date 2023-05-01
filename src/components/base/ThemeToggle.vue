@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-const persistedTheme = localStorage.getItem("data-theme");
-const theme = ref<"light" | "dark">(persistedTheme as any);
+import { onMounted, ref } from "vue";
+const persistedTheme = (localStorage.getItem("data-theme") as any) ?? "dark";
+const theme = ref<"light" | "dark">(persistedTheme);
+const isMounted = ref(false);
 
 const toggleTheme = () => {
   const newState = theme.value === "light" ? "dark" : "light";
@@ -13,10 +14,18 @@ const toggleTheme = () => {
   theme.value = newState;
   localStorage.setItem("data-theme", newState);
 };
+
+onMounted(() => {
+  isMounted.value = true;
+});
 </script>
 
 <template>
-  <button class="switch" :class="[theme]" @click="toggleTheme">
+  <button
+    class="switch"
+    :class="[theme, isMounted ? 'visible' : '']"
+    @click="toggleTheme"
+  >
     <div class="icon">
       <!--?xml version="1.0" ?-->
       <svg class="sun" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
@@ -74,6 +83,10 @@ const toggleTheme = () => {
   padding: 0.125rem;
   cursor: pointer;
 
+  &.visible .icon{
+    opacity: 1;
+  }
+
   .icon {
     width: var(--size);
     aspect-ratio: 1/1;
@@ -82,7 +95,8 @@ const toggleTheme = () => {
     position: relative;
     left: 0;
     transform: rotate(0);
-    transition: left 400ms ease-in-out, transform 400ms ease-in-out;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
     .sun,
     .moon {
       width: 85%;

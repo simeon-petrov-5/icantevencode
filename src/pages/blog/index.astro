@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/layout.astro";
+import Page from "../../layouts/Page.astro";
 import { fetchArticles } from "src/utils/notion";
 import Tags from "@components/blog/Tags.astro";
 import BlogThumbnail from "@components/blog/BlogThumbnail.astro";
@@ -7,7 +7,7 @@ import BlogThumbnail from "@components/blog/BlogThumbnail.astro";
 const articles = await fetchArticles();
 ---
 
-<Layout title="Blog" description="">
+<Page title="Blog" description="" imageUrl="">
   <section class="ds__section--sm">
     <h1 class="ds__title--xl">Sometimes I try to write stuff</h1>
 
@@ -34,7 +34,7 @@ const articles = await fetchArticles();
       }
     </ul>
   </section>
-</Layout>
+</Page>
 
 <style lang="scss">
   .ds__title--xl {

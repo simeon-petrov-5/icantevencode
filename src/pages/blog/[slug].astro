@@ -1,5 +1,5 @@
 ---
-import Blogpostlayout from "src/layouts/blogpost.astro";
+import Blogpost from "src/layouts/Blogpost.astro";
 import { ArticleDetails, fetchBlocks, fetchArticles } from "src/utils/notion";
 import BlocksRenderer from "@components/blog/BlocksRenderer.astro";
 import BlogleHeader from "@components/blog/BlogHeader.astro";
@@ -23,8 +23,11 @@ const article = Astro.props.article as ArticleDetails;
 const blocks = await fetchBlocks(article.id);
 ---
 
-<Blogpostlayout title={article.title} description={article.excerpt} slug={article.slug}>
+<Blogpost
+  title={article.title}
+  description={article.excerpt}
+  imageUrl={`https://icantevencode.com/og/blog/${article.slug}.png`}
+>
   <BlogleHeader data={article} />
   <BlocksRenderer title={article.title} items={blocks} />
-</Blogpostlayout>
-
+</Blogpost>

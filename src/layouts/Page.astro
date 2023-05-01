@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+
+
+export interface Props {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
+
+const { title, description, imageUrl } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} imageUrl={imageUrl}>
+  <slot />
+</BaseLayout>
