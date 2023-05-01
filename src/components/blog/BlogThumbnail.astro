@@ -23,13 +23,14 @@ const { src, alt } = Astro.props;
 </div>
 
 <style lang="scss" scoped>
+  @use "../../assets/styles/design-tokens/shadow";
   .thumbnail {
     border-radius: 0.5rem;
     overflow: hidden;
     aspect-ratio: 16 / 9;
     width: 100%;
     max-width: 600px;
-    box-shadow: var(--shadow-md);
+    box-shadow: shadow.$md;
     display: block;
     margin-left: auto;
     margin-right: auto;

@@ -57,6 +57,7 @@ const codeAbout = `const about = {
 </section>
 
 <style lang="scss">
+  @use "../../assets/styles/design-tokens/base-colors";
   .hero {
     display: flex;
     justify-content: center;
@@ -110,11 +111,11 @@ const codeAbout = `const about = {
       background-color: var(--clr-primary-dark-300);
       background-image: linear-gradient(
         to right bottom,
-        var(--gray-9),
-        var(--dark-6),
-        var(--dark-7),
-        var(--dark-8),
-        var(--dark-9)
+        base-colors.$gray-9,
+        base-colors.$dark-6,
+        base-colors.$dark-7,
+        base-colors.$dark-8,
+        base-colors.$dark-9
       );
       border: 1px solid var(--clr-primary-d2);
       border-radius: 0.5rem;

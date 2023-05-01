@@ -16,7 +16,7 @@ interface Props {
   title?: string;
   className?: string;
 }
-const { items, title = "", className } = Astro.props as Props;
+const { items, title = "", className = "" } = Astro.props as Props;
 
 const groupedData: any[] = [];
 let prevType = "";
@@ -68,18 +68,14 @@ items.forEach((item) => {
   }
 </div>
 
-<style lang="scss" scoped>
+<style lang="scss" is:global>
+  /* purgecss start ignore */
   .blockRenderer {
-    color: white;
+    color: var(--clr-blogpost-text);
     font-size: 1.25rem;
 
-    .astro-code {
-      padding: 1rem 1.25rem;
-      font-size: 1rem;
-    }
-
     hr {
-      color: var(--clr-primary-d2);
+      color: var(--clr-blogpost-accent);
       margin-block: 3rem;
     }
 
@@ -96,7 +92,7 @@ items.forEach((item) => {
     }
 
     .sub-title {
-      color: var(--clr-label);
+      color: var(--clr-blogpost-text);
       text-align: center;
       font-style: italic;
       font-size: 1rem;
@@ -125,13 +121,13 @@ items.forEach((item) => {
     // Blockquote
     blockquote {
       background-color: transparent;
-      border-left: 10px solid var(--clr-primary-d2);
+      border-left: 10px solid var(--clr-blogpost-accent);
       margin: 1.5em 10px;
       padding: 0.5em 10px;
       quotes: "\201C""\201D""\2018""\2019";
     }
     blockquote:before {
-      color: var(--clr-primary-d2);
+      color: var(--clr-blogpost-accent);
       content: open-quote;
       font-size: 4em;
       line-height: 0.1em;
@@ -145,7 +141,7 @@ items.forEach((item) => {
     // Tables
     table {
       width: 100%;
-      background-color: var(--clr-primary-l3);
+      background-color: var(--clr-blogpost-table-bg);
       border-collapse: collapse;
       border-width: 2px;
       border-color: #ffcc00;
@@ -156,19 +152,19 @@ items.forEach((item) => {
     table td,
     table th {
       border-width: 2px;
-      border-color: var(--clr-primary-d3);
+      border-color: var(--clr-blogpost-table);
       border-style: solid;
       padding: 0.25rem 0.75rem;
     }
 
     table thead {
-      background-color: var(--clr-primary-d3);
+      background-color: var(--clr-blogpost-table);
     }
-
     img {
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
   }
+  /* purgecss end ignore */
 </style>

@@ -1,18 +1,23 @@
 ---
-import Layout from "../layouts/layout.astro";
+import "aos/dist/aos.css";
+import Page from "@layouts/Page.astro";
 import Hero from "@components/sections/Hero.astro";
 import About from "@components/sections/About.astro";
 import TechStack from "@components/sections/TechStack.astro";
 import CurrentWork from "@components/sections/CurrentWork.vue";
-import Contacts from "@components/base/Contacts.vue";
+import Contacts from "@components/sections/Contacts.vue";
 ---
 
-<script src="../assets/js/aos.js" />
-
-<Layout title="Home" description="Simeon Petrov, Front-end developer based in Sofia, Bulgaria">
+<Page
+  title="Home"
+  description="Simeon Petrov, Front-end developer based in Sofia, Bulgaria"
+  imageUrl=""
+>
   <Hero />
   <About />
   <TechStack />
   <CurrentWork client:idle />
   <Contacts client:visible />
-</Layout>
+</Page>
+
+<script src="../assets/js/aos.js"></script>

@@ -1,74 +1,36 @@
 ---
-import "../assets/styles/index.scss";
-import UIHeader from "@components/base/UIHeader.astro";
-import UIFooter from "@components/base/UIFooter.astro";
+import BaseLayout from "@components/base/BaseLayout.astro";
 
 export interface Props {
   title: string;
-  slug: string;
   description: string;
+  imageUrl: string;
 }
 
-const { title, slug, description } = Astro.props;
+const { title, imageUrl, description } = Astro.props;
 ---
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-<meta name="generator" content={Astro.generator} />
-<title>{title}</title>
+<BaseLayout title={title} description={description} imageUrl={imageUrl}>
+  <div class="ds__section--sm">
+    <slot />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
-<meta property="og:type" content="article" />
-<meta property="og:url" content={`https://icantevencode.com/blog/${slug}`}>
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@icantevencode" />
-<meta name="twitter:image" content={`https://icantevencode.com/og/blog/${slug}.png`} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-
-<script
-  async
-  defer
-  type="text/partytown"
-  data-website-id="9afa6024-4623-47a9-83a0-daf557f5b692"
-  src="https://icant-umami.netlify.app/umami.js"
-></script>
-
-<body>
-  <UIHeader />
-  <main>
-    <div class="ds__section--sm">
-      <slot />
-
-      <script
-        client:visible
-        src="https://giscus.app/client.js"
-        data-repo="simeon-petrov-5/icantevencode"
-        data-repo-id="R_kgDOIXCOYg"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOIXCOYs4CV_qu"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async
-      ></script>
-    </div>
-  </main>
-
-  <UIFooter />
-</body>
+    <script
+      client:visible
+      src="https://giscus.app/client.js"
+      data-repo="simeon-petrov-5/icantevencode"
+      data-repo-id="R_kgDOIXCOYg"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOIXCOYs4CV_qu"
+      data-mapping="title"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="dark"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+</BaseLayout>

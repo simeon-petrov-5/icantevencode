@@ -184,8 +184,8 @@ const onSubmit = () => {
         position: absolute;
         top: calc(var(--input-container-pt) + var(--input-py));
         left: 1rem;
-        color: var(--clr-label);
-        background-color: var(--clr-page);
+        color: var(--clr-form-label);
+        background-color: var(--clr-form-element-bg);
         transition: all 300ms ease-in;
       }
 
@@ -193,9 +193,9 @@ const onSubmit = () => {
       textarea {
         width: 100%;
         background-color: transparent;
-        border: 2px solid var(--clr-primary-d2);
+        border: 2px solid var(--clr-form-element-border);
         padding: var(--input-py) 1rem;
-        color: var(--clr-text);
+        color: var(--clr-form-text);
         border-radius: 0.325rem;
         outline: none;
         transition: border-color 300ms ease-in-out;
@@ -220,8 +220,8 @@ const onSubmit = () => {
     .btn {
       width: 100%;
       margin-top: var(--input-container-pt);
-      border: 2px solid var(--clr-primary-d2);
-      color: var(--clr-primary-d2);
+      border: 2px solid var(--clr-form-element-border);
+      color: var(--clr-form-btn-text);
       text-align: center;
       border-radius: 0.325rem;
       padding: 0.5rem 0.25rem;
@@ -230,8 +230,8 @@ const onSubmit = () => {
       transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 
       &:hover {
-        background-color: var(--clr-primary-d2);
-        color: var(--dark-9);
+        color: var(--clr-form-btn-hover-text);
+        background-color: var(--clr-form-btn-hover-bg);
       }
     }
 

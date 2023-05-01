@@ -18,28 +18,33 @@ h6 {
 
 h1 {
   font-size: 2.2rem;
-  color: var(--clr-primary);
+  color: var(--clr-heading-1);
 }
+
 h2 {
   font-size: 2rem;
-  color: var(--clr-primary-d1);
+  color: var(--clr-heading-2);
 }
+
 h3 {
   font-size: 1.8rem;
-  color: var(--clr-primary-l1);
+  color: var(--clr-heading-3);
 }
+
 h4 {
   font-size: 1.6rem;
-  color: var(--clr-primary-l2);
+  color: var(--clr-heading-4);
 }
-h5 {
-  font-size: 1.4rem;
-  color: var(--clr-primary-l3);
-}
-h6 {
-  font-size: 1.2rem;
-  color: var(--clr-primary-l3);
-}
+
+// Notion supports max h3, and I never use > h4
+// h5 {
+//   font-size: 1.4rem;
+//   color: var(--clr-primary-l3);
+// }
+// h6 {
+//   font-size: 1.2rem;
+//   color: var(--clr-primary-l3);
+// }
 
 p {
   margin: 0;
@@ -56,7 +61,7 @@ $font-fluid-xl: clamp(2rem, 9vw, 3.5rem);
 
 .ds__title {
   font-size: $font-fluid-def;
-  color: var(--clr-primary-d1);
+  color: var(--clr-title);
   line-height: 1;
   text-transform: capitalize;
   margin-bottom: 1rem;
@@ -66,10 +71,12 @@ $font-fluid-xl: clamp(2rem, 9vw, 3.5rem);
   @extend .ds__title;
   font-size: $font-fluid-xl;
 }
+
 .ds__title--lg {
   @extend .ds__title;
   font-size: $font-fluid-lg;
 }
+
 .ds__title--sm {
   @extend .ds__title;
   font-size: $font-fluid-sm;
@@ -79,12 +86,12 @@ $font-fluid-xl: clamp(2rem, 9vw, 3.5rem);
 // Text / paragraph
 // ******
 .ds__text {
-  color: var(--lime-2);
+  color: var(--clr-text);
   font-size: 1.25rem;
   line-height: 1.5;
   letter-spacing: 1px;
 
   .ds__accent {
-    color: var(--clr-primary-d2);
+    color: var(--clr-text-accent);
   }
 }

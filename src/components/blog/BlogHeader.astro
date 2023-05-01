@@ -45,6 +45,7 @@ const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
 </div>
 
 <style lang="scss">
+  @use "../../assets/styles/design-tokens/base-colors";
   .article-header {
     max-width: 600px;
     margin: 0 auto;
@@ -54,7 +55,7 @@ const date = new Intl.DateTimeFormat("de-DE").format(new Date(data.lastEdited));
     .meta {
       margin-bottom: 1.25rem;
       padding: 0;
-      color: var(--gray-3);
+      color: var(--clr-text-light);
     }
   }
 </style>

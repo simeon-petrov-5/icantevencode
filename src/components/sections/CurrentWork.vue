@@ -105,7 +105,7 @@ const cells = computed(() => columns.value * rows.value);
       gap: 1px;
 
       &__cell {
-        background-color: var(--clr-page);
+        background-color: var(--clr-page-bg);
       }
     }
 
@@ -124,7 +124,7 @@ const cells = computed(() => columns.value * rows.value);
       background: linear-gradient(
         0deg,
         rgba(255, 216, 110, 0) 0%,
-        var(--clr-page) 100%
+        var(--clr-page-bg) 100%
       );
     }
     &::after {
@@ -132,7 +132,7 @@ const cells = computed(() => columns.value * rows.value);
       background: linear-gradient(
         180deg,
         rgba(255, 216, 110, 0) 0%,
-        var(--clr-page) 100%
+        var(--clr-page-bg) 100%
       );
     }
   }

@@ -81,6 +81,7 @@ const randomColor = () => {
 </section>
 
 <style lang="scss">
+  @use "../../assets/styles/design-tokens/base-colors";
   @keyframes stack-fade-right {
     from {
       left: -10px;
@@ -116,21 +117,13 @@ const randomColor = () => {
       .stack--main {
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        background-image: linear-gradient(
-          to right,
-          var(--lime-6),
-          var(--orange-4)
-        );
+        background-image: var(--clr-gradient-main);
       }
 
       .stack--general {
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        background-image: linear-gradient(
-          to right,
-          var(--orange-4),
-          var(--lime-6)
-        );
+        background-image: var(--clr-gradient-main-reverse);
       }
 
       & > li {

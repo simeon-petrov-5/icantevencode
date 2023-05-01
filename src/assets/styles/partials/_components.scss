@@ -1,7 +1,7 @@
 /* Links */
 a:not(.ds__link--clean) {
   display: inline-block;
-  color: var(--green-6);
+  color: var(--clr-link-text);
   transition: color 300ms ease-in-out;
   position: relative;
 
@@ -11,14 +11,14 @@ a:not(.ds__link--clean) {
     top: 0;
     left: 0;
     bottom: 0;
-    background-color: var(--green-6);
+    background-color: var(--clr-link-hover-bg);
     width: 0%;
     z-index: -1;
     transition: width 300ms ease-in-out;
   }
 
   &:hover {
-    color: var(--dark-9);
+    color: var(--clr-link-hover-text);
     text-decoration: none;
     &::before {
       width: 100%;

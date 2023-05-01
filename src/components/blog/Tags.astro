@@ -18,11 +18,11 @@ const { items, position, small } = Astro.props as Props;
   }
 </ul>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  @use "../../assets/styles/design-tokens/base-colors";
   .tags {
     display: flex;
     gap: 1rem;
-    color: white;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -34,9 +34,9 @@ const { items, position, small } = Astro.props as Props;
     .tag {
       padding: 0.25rem 1.25rem;
       border-radius: 0.375rem;
-      border: 1px solid var(--tag-clr, var(--cyan-7));
-      background-color: var(--tag-clr-bg, var(--cyan-1));
-      color: var(--tag-clr, var(--cyan-7));
+      border: 1px solid var(--tag-clr, base-colors.$cyan-7);
+      background-color: var(--tag-clr-bg, base-colors.$cyan-1);
+      color: var(--tag-clr, base-colors.$cyan-7);
       font-weight: bold;
       letter-spacing: 1px;
       font-size: 0.75rem;
@@ -47,32 +47,32 @@ const { items, position, small } = Astro.props as Props;
       }
 
       &[data-tag="html"] {
-        --tag-clr: var(--orange-7);
-        --tag-clr-bg: var(--orange-1);
+        --tag-clr: #{base-colors.$orange-7};
+        --tag-clr-bg: #{base-colors.$orange-1};
       }
       &[data-tag="css"] {
-        --tag-clr: var(--blue-7);
-        --tag-clr-bg: var(--blue-1);
+        --tag-clr: #{base-colors.$blue-7};
+        --tag-clr-bg: #{base-colors.$blue-1};
       }
       &[data-tag="sass"] {
-        --tag-clr: var(--purple-7);
-        --tag-clr-bg: var(--purple-1);
+        --tag-clr: #{base-colors.$purple-7};
+        --tag-clr-bg: #{base-colors.$purple-1};
       }
       &[data-tag="javascript"] {
-        --tag-clr: var(--yellow-7);
-        --tag-clr-bg: var(--yellow-1);
+        --tag-clr: #{base-colors.$yellow-7};
+        --tag-clr-bg: #{base-colors.$yellow-1};
       }
       &[data-tag="typescript"] {
-        --tag-clr: var(--indigo-7);
-        --tag-clr-bg: var(--indigo-1);
+        --tag-clr: #{base-colors.$indigo-7};
+        --tag-clr-bg: #{base-colors.$indigo-1};
       }
       &[data-tag="node"] {
-        --tag-clr: var(--camo-7);
-        --tag-clr-bg: var(--camo-1);
+        --tag-clr: #{base-colors.$camo-7};
+        --tag-clr-bg: #{base-colors.$camo-1};
       }
       &[data-tag="vue"] {
-        --tag-clr: var(--lime-7);
-        --tag-clr-bg: var(--lime-1);
+        --tag-clr: #{base-colors.$lime-7};
+        --tag-clr-bg: #{base-colors.$lime-1};
       }
     }
   }
