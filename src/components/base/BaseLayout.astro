@@ -2,6 +2,7 @@
 import "../../assets/styles/index.scss";
 import UIHeader from "@components/base/UIHeader.astro";
 import UIFooter from "@components/base/UIFooter.astro";
+import CookiesBanner from "./CookiesBanner.vue";
 
 export interface Props {
   title: string;
@@ -46,6 +47,7 @@ const { title, description, imageUrl } = Astro.props;
   </main>
 
   <UIFooter />
+  <CookiesBanner client:idle/>
 </body>
 
 <script

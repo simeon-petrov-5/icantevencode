@@ -21,7 +21,9 @@ export default defineConfig({
       html: false,
     }),
     critters(),
-    image(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    }),
     partytown(),
   ],
   compilerOptions: {
