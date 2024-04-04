@@ -16,10 +16,6 @@ export default defineConfig({
   integrations: [
     vue(),
     sitemap(),
-    compress({
-      css: false,
-      html: false,
-    }),
     critters(),
     image({
       serviceEntryPoint: '@astrojs/image/sharp'
