@@ -34,25 +34,31 @@ const colors = [
   "#fd7e14",
 ];
 const mainStack = [
-  "Vue",
+  "Vue 3 & 2",
+  "TypeScript",
+  "Tailwind",
+  "NodeJS",
+  "Express",
+  "Zod",
   "Vite",
   "Vitest",
-  "Jest",
   "Pinia",
-  "Vuex",
   "Nuxt",
+  "JavaScript",
+];
+const generalStack = [
+  "React",
+  "MobX",
+  "Zustand",
   "SSR",
   "SSG",
-  "JS",
-  "TS",
-  "Dart SASS",
-  "WindiCSS",
-  "Tailwind",
-  "CSS Vars",
-  "Strapi",
+  "Jest",
+  "SASS",
+  "Strapi CMS",
   "JAM Stack",
+  "Gatsby",
+  "jQuery",
 ];
-const generalStack = ["React", "Gatsby", "NetlifyCMS", "WordPress", "jQuery"];
 
 const randomColor = () => {
   const color = colors[Math.floor(Math.random() * colors.length)];
@@ -70,11 +76,11 @@ const randomColor = () => {
   </div>
 
   <ul class="stack-list" data-aos="fade-up" role="list">
-    <li class="stack--main">My main stack are stuff like</li>
+    <li class="stack--main">My favourite stack would be</li>
 
     {mainStack.map((main) => <li style={randomColor()}>{main}</li>)}
 
-    <li class="stack--general">But I also know some stuff about</li>
+    <li class="stack--general">but I also use on a daily basis</li>
 
     {generalStack.map((general) => <li style={randomColor()}>{general}</li>)}
   </ul>
@@ -118,12 +124,31 @@ const randomColor = () => {
         -webkit-text-fill-color: transparent;
         background-clip: text;
         background-image: var(--clr-gradient-main);
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background: var(--clr-gradient-main);
+        }
       }
 
       .stack--general {
         -webkit-text-fill-color: transparent;
         background-clip: text;
         background-image: var(--clr-gradient-main-reverse);
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 100%;
+          background: var(--clr-gradient-main-reverse);
+        }
       }
 
       & > li {
