@@ -1,8 +1,6 @@
 import { defineConfig } from "astro/config";
 import vue from "@astrojs/vue";
 import sitemap from "@astrojs/sitemap";
-import compress from "astro-compress";
-import critters from "astro-critters";
 
 // https://astro.build/config
 import image from "@astrojs/image";
@@ -16,7 +14,6 @@ export default defineConfig({
   integrations: [
     vue(),
     sitemap(),
-    critters(),
     image({
       serviceEntryPoint: '@astrojs/image/sharp'
     }),
